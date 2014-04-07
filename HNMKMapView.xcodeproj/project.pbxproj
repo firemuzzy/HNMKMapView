@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */; };
+		3FD4768F18F1F9C100858258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4768E18F1F9C100858258 /* Foundation.framework */; };
+		3FD4769118F1F9C100858258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769018F1F9C100858258 /* CoreGraphics.framework */; };
+		3FD4769318F1F9C100858258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769218F1F9C100858258 /* UIKit.framework */; };
+		3FD4769918F1F9C100858258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FD4769718F1F9C100858258 /* InfoPlist.strings */; };
+		3FD4769B18F1F9C100858258 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4769A18F1F9C100858258 /* main.m */; };
+		3FD4769F18F1F9C100858258 /* HNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4769E18F1F9C100858258 /* HNAppDelegate.m */; };
+		3FD476A118F1F9C100858258 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD476A018F1F9C100858258 /* Images.xcassets */; };
+		3FD476A818F1F9C200858258 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD476A718F1F9C200858258 /* XCTest.framework */; };
+		3FD476A918F1F9C200858258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4768E18F1F9C100858258 /* Foundation.framework */; };
+		3FD476AA18F1F9C200858258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769218F1F9C100858258 /* UIKit.framework */; };
+		3FD476B218F1F9C200858258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FD476B018F1F9C200858258 /* InfoPlist.strings */; };
+		3FD476B418F1F9C200858258 /* HNMKMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */; };
+		3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476BE18F1FB9800858258 /* HNTextViewController.m */; };
+		3FD476C118F1FC0A00858258 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD476C018F1FC0A00858258 /* MapKit.framework */; };
+		3FD476C418F1FDD500858258 /* HNMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476C318F1FDD500858258 /* HNMKMapView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FD476AB18F1F9C200858258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FD4768318F1F9C100858258 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FD4768A18F1F9C100858258;
+			remoteInfo = HNMKMapView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+HearNearMap.h"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.h"; sourceTree = "<group>"; };
+		3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+HearNearMap.m"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.m"; sourceTree = "<group>"; };
+		3FD4768B18F1F9C100858258 /* HNMKMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNMKMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD4768E18F1F9C100858258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FD4769018F1F9C100858258 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FD4769218F1F9C100858258 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FD4769618F1F9C100858258 /* HNMKMapView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HNMKMapView-Info.plist"; sourceTree = "<group>"; };
+		3FD4769818F1F9C100858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FD4769A18F1F9C100858258 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FD4769C18F1F9C100858258 /* HNMKMapView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HNMKMapView-Prefix.pch"; sourceTree = "<group>"; };
+		3FD4769D18F1F9C100858258 /* HNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNAppDelegate.h; sourceTree = "<group>"; };
+		3FD4769E18F1F9C100858258 /* HNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNAppDelegate.m; sourceTree = "<group>"; };
+		3FD476A018F1F9C100858258 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HNMKMapViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD476A718F1F9C200858258 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3FD476AF18F1F9C200858258 /* HNMKMapViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HNMKMapViewTests-Info.plist"; sourceTree = "<group>"; };
+		3FD476B118F1F9C200858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNMKMapViewTests.m; sourceTree = "<group>"; };
+		3FD476BD18F1FB9800858258 /* HNTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HNTextViewController.h; path = helperProj/HNTextViewController.h; sourceTree = "<group>"; };
+		3FD476BE18F1FB9800858258 /* HNTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HNTextViewController.m; path = helperProj/HNTextViewController.m; sourceTree = "<group>"; };
+		3FD476C018F1FC0A00858258 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3FD476C218F1FDD500858258 /* HNMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HNMKMapView.h; path = HNMKMapView/libSrc/HNMKMapView.h; sourceTree = "<group>"; };
+		3FD476C318F1FDD500858258 /* HNMKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HNMKMapView.m; path = HNMKMapView/libSrc/HNMKMapView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FD4768818F1F9C100858258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD476C118F1FC0A00858258 /* MapKit.framework in Frameworks */,
+				3FD4769118F1F9C100858258 /* CoreGraphics.framework in Frameworks */,
+				3FD4769318F1F9C100858258 /* UIKit.framework in Frameworks */,
+				3FD4768F18F1F9C100858258 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD476A318F1F9C200858258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD476A818F1F9C200858258 /* XCTest.framework in Frameworks */,
+				3FD476AA18F1F9C200858258 /* UIKit.framework in Frameworks */,
+				3FD476A918F1F9C200858258 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F0C732C18F20C150096BF60 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */,
+				3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */,
+				3FD476C218F1FDD500858258 /* HNMKMapView.h */,
+				3FD476C318F1FDD500858258 /* HNMKMapView.m */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		3FD4768218F1F9C100858258 = {
+			isa = PBXGroup;
+			children = (
+				3F0C732C18F20C150096BF60 /* lib */,
+				3FD4769418F1F9C100858258 /* HNMKMapView */,
+				3FD476AD18F1F9C200858258 /* HNMKMapViewTests */,
+				3FD4768D18F1F9C100858258 /* Frameworks */,
+				3FD4768C18F1F9C100858258 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FD4768C18F1F9C100858258 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4768B18F1F9C100858258 /* HNMKMapView.app */,
+				3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FD4768D18F1F9C100858258 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FD476C018F1FC0A00858258 /* MapKit.framework */,
+				3FD4768E18F1F9C100858258 /* Foundation.framework */,
+				3FD4769018F1F9C100858258 /* CoreGraphics.framework */,
+				3FD4769218F1F9C100858258 /* UIKit.framework */,
+				3FD476A718F1F9C200858258 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FD4769418F1F9C100858258 /* HNMKMapView */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4769D18F1F9C100858258 /* HNAppDelegate.h */,
+				3FD4769E18F1F9C100858258 /* HNAppDelegate.m */,
+				3FD476A018F1F9C100858258 /* Images.xcassets */,
+				3FD4769518F1F9C100858258 /* Supporting Files */,
+				3FD476BD18F1FB9800858258 /* HNTextViewController.h */,
+				3FD476BE18F1FB9800858258 /* HNTextViewController.m */,
+			);
+			path = HNMKMapView;
+			sourceTree = "<group>";
+		};
+		3FD4769518F1F9C100858258 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4769618F1F9C100858258 /* HNMKMapView-Info.plist */,
+				3FD4769718F1F9C100858258 /* InfoPlist.strings */,
+				3FD4769A18F1F9C100858258 /* main.m */,
+				3FD4769C18F1F9C100858258 /* HNMKMapView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FD476AD18F1F9C200858258 /* HNMKMapViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */,
+				3FD476AE18F1F9C200858258 /* Supporting Files */,
+			);
+			path = HNMKMapViewTests;
+			sourceTree = "<group>";
+		};
+		3FD476AE18F1F9C200858258 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FD476AF18F1F9C200858258 /* HNMKMapViewTests-Info.plist */,
+				3FD476B018F1F9C200858258 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FD4768A18F1F9C100858258 /* HNMKMapView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapView" */;
+			buildPhases = (
+				3FD4768718F1F9C100858258 /* Sources */,
+				3FD4768818F1F9C100858258 /* Frameworks */,
+				3FD4768918F1F9C100858258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HNMKMapView;
+			productName = HNMKMapView;
+			productReference = 3FD4768B18F1F9C100858258 /* HNMKMapView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FD476A518F1F9C200858258 /* HNMKMapViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapViewTests" */;
+			buildPhases = (
+				3FD476A218F1F9C200858258 /* Sources */,
+				3FD476A318F1F9C200858258 /* Frameworks */,
+				3FD476A418F1F9C200858258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FD476AC18F1F9C200858258 /* PBXTargetDependency */,
+			);
+			name = HNMKMapViewTests;
+			productName = HNMKMapViewTests;
+			productReference = 3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FD4768318F1F9C100858258 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = HearNear;
+				TargetAttributes = {
+					3FD476A518F1F9C200858258 = {
+						TestTargetID = 3FD4768A18F1F9C100858258;
+					};
+				};
+			};
+			buildConfigurationList = 3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "HNMKMapView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3FD4768218F1F9C100858258;
+			productRefGroup = 3FD4768C18F1F9C100858258 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FD4768A18F1F9C100858258 /* HNMKMapView */,
+				3FD476A518F1F9C200858258 /* HNMKMapViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FD4768918F1F9C100858258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD4769918F1F9C100858258 /* InfoPlist.strings in Resources */,
+				3FD476A118F1F9C100858258 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD476A418F1F9C200858258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD476B218F1F9C200858258 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FD4768718F1F9C100858258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */,
+				3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */,
+				3FD4769F18F1F9C100858258 /* HNAppDelegate.m in Sources */,
+				3FD4769B18F1F9C100858258 /* main.m in Sources */,
+				3FD476C418F1FDD500858258 /* HNMKMapView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD476A218F1F9C200858258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD476B418F1F9C200858258 /* HNMKMapViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FD476AC18F1F9C200858258 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FD4768A18F1F9C100858258 /* HNMKMapView */;
+			targetProxy = 3FD476AB18F1F9C200858258 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FD4769718F1F9C100858258 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FD4769818F1F9C100858258 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3FD476B018F1F9C200858258 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FD476B118F1F9C200858258 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FD476B518F1F9C200858258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FD476B618F1F9C200858258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FD476B818F1F9C200858258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
+				INFOPLIST_FILE = "HNMKMapView/HNMKMapView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3FD476B918F1F9C200858258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
+				INFOPLIST_FILE = "HNMKMapView/HNMKMapView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3FD476BB18F1F9C200858258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3FD476BC18F1F9C200858258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
+				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "HNMKMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD476B518F1F9C200858258 /* Debug */,
+				3FD476B618F1F9C200858258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD476B818F1F9C200858258 /* Debug */,
+				3FD476B918F1F9C200858258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD476BB18F1F9C200858258 /* Debug */,
+				3FD476BC18F1F9C200858258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FD4768318F1F9C100858258 /* Project object */;
+}
