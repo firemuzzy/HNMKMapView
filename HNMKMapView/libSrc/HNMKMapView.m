@@ -145,12 +145,12 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didAddAnnotationViews:)]) {
+    if([self.hnDelegate respondsToSelector:@selector(mapView:didSelectAnnotationView:)]) {
         [self.hnDelegate mapView:mapView didSelectAnnotationView:view];
     }
 }
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didAddAnnotationViews:)]) {
+    if([self.hnDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
         [self.hnDelegate mapView:mapView didDeselectAnnotationView:view];
     }
 }
