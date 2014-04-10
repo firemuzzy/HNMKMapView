@@ -8,12 +8,12 @@
 
 #import "HNTextViewController.h"
 #import <MapKit/MapKit.h>
-#import "HNMKMapView.h"
+#import "FZMapView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface HNTextViewController ()<HNMKMapViewDelegate>
+@interface HNTextViewController ()<FZMapViewDelegate>
 
-@property (nonatomic, strong) HNMKMapView *mapView;
+@property (nonatomic, strong) FZMapView *mapView;
 
 @property (nonatomic, strong) NSTimer *mapStartTimer;
 
@@ -72,8 +72,8 @@
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(37.660258, -122.432493);
 //    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:center fromEyeCoordinate:center eyeAltitude:1000];
     
-    _mapView = [[HNMKMapView alloc] initWithInitialCamera:nil];
-    _mapView.hnDelegate = self;
+    _mapView = [[FZMapView alloc] initWithInitialCamera:nil];
+    _mapView.fzDelegate = self;
     self.mapView.showsUserLocation = YES;
     
     [self.view addSubview:_mapView];

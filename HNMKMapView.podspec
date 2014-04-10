@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'HNMKMapView'
-  s.version = '0.0.2'
+  s.version = '0.0.3'
   s.platform = :ios
   s.ios.deployment_target = '7.0'
 

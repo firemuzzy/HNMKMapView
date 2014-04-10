@@ -16,17 +16,20 @@
     #endif
 #endif
 
-@protocol HNMKMapViewDelegate <MKMapViewDelegate>
+@protocol FZMapViewDelegate <MKMapViewDelegate>
 
 @optional
 - (void)mapView:(MKMapView *)mapView didOpenToInitialCamera:(MKMapCamera *)camera;
 
 @end
 
-@interface HNMKMapView : MKMapView
+@interface FZMapView : MKMapView
 
-@property (nonatomic, strong) id<HNMKMapViewDelegate> hnDelegate;
+@property (nonatomic, strong) id<FZMapViewDelegate> fzDelegate;
 
 - (id)initWithInitialCamera:(MKMapCamera *)camera;
+
+-(CLLocationCoordinate2D) northEast;
+-(CLLocationCoordinate2D) southWest;
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 HearNear. All rights reserved.
 //
 
-#import "HNMKMapView.h"
+#import "FZMapView.h"
 #import "MKMapView+HearNearMap.h"
 
-@interface HNMKMapView ()<MKMapViewDelegate>
+@interface FZMapView ()<MKMapViewDelegate>
 
 @property (nonatomic, strong) MKMapCamera *initialCamera;
 
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation HNMKMapView
+@implementation FZMapView
 
 - (id)initWithInitialCamera:(MKMapCamera *)camera
 {
@@ -40,19 +40,25 @@
     return self;
 }
 
-- (void)setHNDelegate:(id<HNMKMapViewDelegate>)delegate {
-    _hnDelegate = delegate;
-}
-
 
 - (void)_openedToInitialcamera {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didOpenToInitialCamera:) ]) {
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didOpenToInitialCamera:) ]) {
         HNMapLog(@"Opened to initial camera %@", self.initialCamera);
         self.didPreformOnFirstOpen = YES;
-        [self.hnDelegate mapView:self didOpenToInitialCamera:self.initialCamera];
+        [self.fzDelegate mapView:self didOpenToInitialCamera:self.initialCamera];
     }
     
     self.initialCamera = nil;
+}
+
+-(CLLocationCoordinate2D) northEast {
+    return CLLocationCoordinate2DMake(self.region.center.latitude + self.region.span.latitudeDelta / 2.0,
+                                      self.region.center.longitude + self.region.span.longitudeDelta / 2.0);
+}
+
+-(CLLocationCoordinate2D) southWest {
+    return CLLocationCoordinate2DMake(self.region.center.latitude - self.region.span.latitudeDelta / 2.0,
+                                      self.region.center.longitude - self.region.span.longitudeDelta / 2.0);
 }
 
 //
@@ -65,8 +71,8 @@
     if(!self.didPreformOnFirstOpen) return;
     
     HNMapLog(@"regionWillChangeAnimated %@ animated:%@", MKStringFromCoordinateRegion(mapView.region), animated ? @"YES" : @"NO");
-    if([self.hnDelegate respondsToSelector:@selector(mapView:regionWillChangeAnimated:) ]) {
-        [self.hnDelegate mapView:self regionWillChangeAnimated:animated];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:regionWillChangeAnimated:) ]) {
+        [self.fzDelegate mapView:self regionWillChangeAnimated:animated];
     }
 }
 
@@ -82,22 +88,22 @@
     if(!self.didPreformOnFirstOpen) return;
     
     HNMapLog(@"regionDidChangeAnimated %@ animated:%@", MKStringFromCoordinateRegion(mapView.region), animated ? @"YES" : @"NO");
-    if([self.hnDelegate respondsToSelector:@selector(mapView:regionDidChangeAnimated:) ]) {
-        [self.hnDelegate mapView:self regionDidChangeAnimated:animated];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:regionDidChangeAnimated:) ]) {
+        [self.fzDelegate mapView:self regionDidChangeAnimated:animated];
     }
 }
 
 - (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
     HNMapLog(@"mapViewWillStartLoadingMap %@", MKStringFromCoordinateRegion(mapView.region));
-    if([self.hnDelegate respondsToSelector:@selector(mapViewWillStartLoadingMap:)]) {
-        [self.hnDelegate mapViewWillStartLoadingMap:mapView];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartLoadingMap:)]) {
+        [self.fzDelegate mapViewWillStartLoadingMap:mapView];
     }
 }
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
     HNMapLog(@"mapViewDidFinishLoadingMap %@", MKStringFromCoordinateRegion(mapView.region));
-    if([self.hnDelegate respondsToSelector:@selector(mapViewDidFinishLoadingMap:)]) {
-        [self.hnDelegate mapViewDidFinishLoadingMap:mapView];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewDidFinishLoadingMap:)]) {
+        [self.fzDelegate mapViewDidFinishLoadingMap:mapView];
     }
 }
 
@@ -118,54 +124,54 @@
     }
     
     HNMapLog(@"mapViewWillStartRenderingMap %@", MKStringFromCoordinateRegion(mapView.region));
-    if([self.hnDelegate respondsToSelector:@selector(mapViewWillStartRenderingMap:)]) {
-        [self.hnDelegate mapViewWillStartRenderingMap:mapView];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartRenderingMap:)]) {
+        [self.fzDelegate mapViewWillStartRenderingMap:mapView];
     }
 }
 
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered {    
     HNMapLog(@"mapViewDidFinishRenderingMap %@", MKStringFromCoordinateRegion(mapView.region));
-    if([self.hnDelegate respondsToSelector:@selector(mapViewDidFinishRenderingMap:fullyRendered:)]) {
-        [self.hnDelegate mapViewDidFinishRenderingMap:mapView fullyRendered:fullyRendered];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewDidFinishRenderingMap:fullyRendered:)]) {
+        [self.fzDelegate mapViewDidFinishRenderingMap:mapView fullyRendered:fullyRendered];
     }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:viewForAnnotation:)]) {
-        return [self.hnDelegate mapView:mapView viewForAnnotation:annotation];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:viewForAnnotation:)]) {
+        return [self.fzDelegate mapView:mapView viewForAnnotation:annotation];
     } else {
         return nil;
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didAddAnnotationViews:)]) {
-        [self.hnDelegate mapView:mapView didAddAnnotationViews:views];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didAddAnnotationViews:)]) {
+        [self.fzDelegate mapView:mapView didAddAnnotationViews:views];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didSelectAnnotationView:)]) {
-        [self.hnDelegate mapView:mapView didSelectAnnotationView:view];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didSelectAnnotationView:)]) {
+        [self.fzDelegate mapView:mapView didSelectAnnotationView:view];
     }
 }
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
-        [self.hnDelegate mapView:mapView didDeselectAnnotationView:view];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
+        [self.fzDelegate mapView:mapView didDeselectAnnotationView:view];
     }
 }
 
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     HNMapLog(@"mapViewWillStartLocatingUser");
-    if([self.hnDelegate respondsToSelector:@selector(mapViewWillStartLocatingUser:)]) {
-        [self.hnDelegate mapViewWillStartLocatingUser:mapView];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartLocatingUser:)]) {
+        [self.fzDelegate mapViewWillStartLocatingUser:mapView];
     }
 }
 - (void)mapViewDidStopLocatingUser:(MKMapView *)mapView {
     HNMapLog(@"mapViewDidStopLocatingUser");
-    if([self.hnDelegate respondsToSelector:@selector(mapViewDidStopLocatingUser:)]) {
-        [self.hnDelegate mapViewDidStopLocatingUser:mapView];
+    if([self.fzDelegate respondsToSelector:@selector(mapViewDidStopLocatingUser:)]) {
+        [self.fzDelegate mapViewDidStopLocatingUser:mapView];
     }
 }
 
@@ -174,22 +180,22 @@
     
     self.lastUserLocation = userLocation;
     
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didUpdateUserLocation:)]) {
-        [self.hnDelegate mapView:mapView didUpdateUserLocation:userLocation];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didUpdateUserLocation:)]) {
+        [self.fzDelegate mapView:mapView didUpdateUserLocation:userLocation];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
     HNMapLog(@"didFailToLocateUserWithError: %@", error);
 
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didFailToLocateUserWithError:)]) {
-        [self.hnDelegate mapView:mapView didFailToLocateUserWithError:error];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didFailToLocateUserWithError:)]) {
+        [self.fzDelegate mapView:mapView didFailToLocateUserWithError:error];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated {
-    if([self.hnDelegate respondsToSelector:@selector(mapView:didChangeUserTrackingMode:animated:)]) {
-        [self.hnDelegate mapView:mapView didChangeUserTrackingMode:mode animated:animated];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didChangeUserTrackingMode:animated:)]) {
+        [self.fzDelegate mapView:mapView didChangeUserTrackingMode:mode animated:animated];
     }
 }
 

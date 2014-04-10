@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3FD4768A18F1F9C100858258"
                BuildableName = "HNMKMapView.app"
-               BlueprintName = "HNMKMapView"
-               ReferencedContainer = "container:HNMKMapView.xcodeproj">
+               BlueprintName = "FZMapKit"
+               ReferencedContainer = "container:FZMapKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3FD476A518F1F9C200858258"
                BuildableName = "HNMKMapViewTests.xctest"
-               BlueprintName = "HNMKMapViewTests"
-               ReferencedContainer = "container:HNMKMapView.xcodeproj">
+               BlueprintName = "FZMapKitTests"
+               ReferencedContainer = "container:FZMapKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
             BuildableName = "HNMKMapView.app"
-            BlueprintName = "HNMKMapView"
-            ReferencedContainer = "container:HNMKMapView.xcodeproj">
+            BlueprintName = "FZMapKit"
+            ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
             BuildableName = "HNMKMapView.app"
-            BlueprintName = "HNMKMapView"
-            ReferencedContainer = "container:HNMKMapView.xcodeproj">
+            BlueprintName = "FZMapKit"
+            ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
             BuildableName = "HNMKMapView.app"
-            BlueprintName = "HNMKMapView"
-            ReferencedContainer = "container:HNMKMapView.xcodeproj">
+            BlueprintName = "FZMapKit"
+            ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

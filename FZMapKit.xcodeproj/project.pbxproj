@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */; };
+		3F2B8B9018F63AB70002AB6B /* FZMapFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */; };
 		3FD4768F18F1F9C100858258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4768E18F1F9C100858258 /* Foundation.framework */; };
 		3FD4769118F1F9C100858258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769018F1F9C100858258 /* CoreGraphics.framework */; };
 		3FD4769318F1F9C100858258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769218F1F9C100858258 /* UIKit.framework */; };
@@ -22,7 +23,7 @@
 		3FD476B418F1F9C200858258 /* HNMKMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */; };
 		3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476BE18F1FB9800858258 /* HNTextViewController.m */; };
 		3FD476C118F1FC0A00858258 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD476C018F1FC0A00858258 /* MapKit.framework */; };
-		3FD476C418F1FDD500858258 /* HNMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476C318F1FDD500858258 /* HNMKMapView.m */; };
+		3FD476C418F1FDD500858258 /* FZMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476C318F1FDD500858258 /* FZMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,18 +39,20 @@
 /* Begin PBXFileReference section */
 		3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+HearNearMap.h"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.h"; sourceTree = "<group>"; };
 		3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+HearNearMap.m"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.m"; sourceTree = "<group>"; };
-		3FD4768B18F1F9C100858258 /* HNMKMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNMKMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2B8B8E18F63AB70002AB6B /* FZMapFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZMapFoundation.h; path = HNMKMapView/libSrc/FZMapFoundation.h; sourceTree = "<group>"; };
+		3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZMapFoundation.m; path = HNMKMapView/libSrc/FZMapFoundation.m; sourceTree = "<group>"; };
+		3FD4768B18F1F9C100858258 /* FZMapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FZMapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD4768E18F1F9C100858258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FD4769018F1F9C100858258 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3FD4769218F1F9C100858258 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3FD4769618F1F9C100858258 /* HNMKMapView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HNMKMapView-Info.plist"; sourceTree = "<group>"; };
+		3FD4769618F1F9C100858258 /* FZMapKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FZMapKit-Info.plist"; sourceTree = "<group>"; };
 		3FD4769818F1F9C100858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3FD4769A18F1F9C100858258 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3FD4769C18F1F9C100858258 /* HNMKMapView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HNMKMapView-Prefix.pch"; sourceTree = "<group>"; };
+		3FD4769C18F1F9C100858258 /* FZMapKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FZMapKit-Prefix.pch"; sourceTree = "<group>"; };
 		3FD4769D18F1F9C100858258 /* HNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNAppDelegate.h; sourceTree = "<group>"; };
 		3FD4769E18F1F9C100858258 /* HNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNAppDelegate.m; sourceTree = "<group>"; };
 		3FD476A018F1F9C100858258 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HNMKMapViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FZMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD476A718F1F9C200858258 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3FD476AF18F1F9C200858258 /* HNMKMapViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HNMKMapViewTests-Info.plist"; sourceTree = "<group>"; };
 		3FD476B118F1F9C200858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -57,8 +60,8 @@
 		3FD476BD18F1FB9800858258 /* HNTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HNTextViewController.h; path = helperProj/HNTextViewController.h; sourceTree = "<group>"; };
 		3FD476BE18F1FB9800858258 /* HNTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HNTextViewController.m; path = helperProj/HNTextViewController.m; sourceTree = "<group>"; };
 		3FD476C018F1FC0A00858258 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3FD476C218F1FDD500858258 /* HNMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HNMKMapView.h; path = HNMKMapView/libSrc/HNMKMapView.h; sourceTree = "<group>"; };
-		3FD476C318F1FDD500858258 /* HNMKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HNMKMapView.m; path = HNMKMapView/libSrc/HNMKMapView.m; sourceTree = "<group>"; };
+		3FD476C218F1FDD500858258 /* FZMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZMapView.h; path = HNMKMapView/libSrc/FZMapView.h; sourceTree = "<group>"; };
+		3FD476C318F1FDD500858258 /* FZMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZMapView.m; path = HNMKMapView/libSrc/FZMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +94,10 @@
 			children = (
 				3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */,
 				3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */,
-				3FD476C218F1FDD500858258 /* HNMKMapView.h */,
-				3FD476C318F1FDD500858258 /* HNMKMapView.m */,
+				3FD476C218F1FDD500858258 /* FZMapView.h */,
+				3FD476C318F1FDD500858258 /* FZMapView.m */,
+				3F2B8B8E18F63AB70002AB6B /* FZMapFoundation.h */,
+				3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -111,8 +116,8 @@
 		3FD4768C18F1F9C100858258 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3FD4768B18F1F9C100858258 /* HNMKMapView.app */,
-				3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */,
+				3FD4768B18F1F9C100858258 /* FZMapKit.app */,
+				3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,10 +150,10 @@
 		3FD4769518F1F9C100858258 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3FD4769618F1F9C100858258 /* HNMKMapView-Info.plist */,
+				3FD4769618F1F9C100858258 /* FZMapKit-Info.plist */,
 				3FD4769718F1F9C100858258 /* InfoPlist.strings */,
 				3FD4769A18F1F9C100858258 /* main.m */,
-				3FD4769C18F1F9C100858258 /* HNMKMapView-Prefix.pch */,
+				3FD4769C18F1F9C100858258 /* FZMapKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,9 +179,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3FD4768A18F1F9C100858258 /* HNMKMapView */ = {
+		3FD4768A18F1F9C100858258 /* FZMapKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapView" */;
+			buildConfigurationList = 3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKit" */;
 			buildPhases = (
 				3FD4768718F1F9C100858258 /* Sources */,
 				3FD4768818F1F9C100858258 /* Frameworks */,
@@ -186,14 +191,14 @@
 			);
 			dependencies = (
 			);
-			name = HNMKMapView;
+			name = FZMapKit;
 			productName = HNMKMapView;
-			productReference = 3FD4768B18F1F9C100858258 /* HNMKMapView.app */;
+			productReference = 3FD4768B18F1F9C100858258 /* FZMapKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3FD476A518F1F9C200858258 /* HNMKMapViewTests */ = {
+		3FD476A518F1F9C200858258 /* FZMapKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapViewTests" */;
+			buildConfigurationList = 3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKitTests" */;
 			buildPhases = (
 				3FD476A218F1F9C200858258 /* Sources */,
 				3FD476A318F1F9C200858258 /* Frameworks */,
@@ -204,9 +209,9 @@
 			dependencies = (
 				3FD476AC18F1F9C200858258 /* PBXTargetDependency */,
 			);
-			name = HNMKMapViewTests;
+			name = FZMapKitTests;
 			productName = HNMKMapViewTests;
-			productReference = 3FD476A618F1F9C200858258 /* HNMKMapViewTests.xctest */;
+			productReference = 3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "HNMKMapView" */;
+			buildConfigurationList = 3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "FZMapKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3FD4768A18F1F9C100858258 /* HNMKMapView */,
-				3FD476A518F1F9C200858258 /* HNMKMapViewTests */,
+				3FD4768A18F1F9C100858258 /* FZMapKit */,
+				3FD476A518F1F9C200858258 /* FZMapKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,10 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */,
+				3F2B8B9018F63AB70002AB6B /* FZMapFoundation.m in Sources */,
 				3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */,
 				3FD4769F18F1F9C100858258 /* HNAppDelegate.m in Sources */,
 				3FD4769B18F1F9C100858258 /* main.m in Sources */,
-				3FD476C418F1FDD500858258 /* HNMKMapView.m in Sources */,
+				3FD476C418F1FDD500858258 /* FZMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +294,7 @@
 /* Begin PBXTargetDependency section */
 		3FD476AC18F1F9C200858258 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3FD4768A18F1F9C100858258 /* HNMKMapView */;
+			target = 3FD4768A18F1F9C100858258 /* FZMapKit */;
 			targetProxy = 3FD476AB18F1F9C200858258 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -391,10 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
-				INFOPLIST_FILE = "HNMKMapView/HNMKMapView-Info.plist";
+				GCC_PREFIX_HEADER = "HNMKMapView/FZMapKit-Prefix.pch";
+				INFOPLIST_FILE = "HNMKMapView/FZMapKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FZMapKit;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,10 +411,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
-				INFOPLIST_FILE = "HNMKMapView/HNMKMapView-Info.plist";
+				GCC_PREFIX_HEADER = "HNMKMapView/FZMapKit-Prefix.pch";
+				INFOPLIST_FILE = "HNMKMapView/FZMapKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FZMapKit;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -429,7 +435,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FZMapKitTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -447,7 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
 				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FZMapKitTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -456,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "HNMKMapView" */ = {
+		3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "FZMapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3FD476B518F1F9C200858258 /* Debug */,
@@ -465,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapView" */ = {
+		3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3FD476B818F1F9C200858258 /* Debug */,
@@ -474,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "HNMKMapViewTests" */ = {
+		3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3FD476BB18F1F9C200858258 /* Debug */,
