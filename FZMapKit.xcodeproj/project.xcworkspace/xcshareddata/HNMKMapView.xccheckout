@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>84F43740-7684-4DEC-8881-75B4756FC37B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HNMKMapView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7C9D9999-9250-4474-90BF-6FFA7A796DAF</key>
+		<string>ssh://github.com/firemuzzy/HNMKMapView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HNMKMapView.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7C9D9999-9250-4474-90BF-6FFA7A796DAF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/firemuzzy/HNMKMapView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7C9D9999-9250-4474-90BF-6FFA7A796DAF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7C9D9999-9250-4474-90BF-6FFA7A796DAF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HNMKMapView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
