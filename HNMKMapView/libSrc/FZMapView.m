@@ -26,15 +26,19 @@
 
 @implementation FZMapView
 
+- (instancetype) init {
+    if(self = [super init]) {
+        self.delegate = self;
+    }
+    return self;
+}
+
 - (id)initWithInitialCamera:(MKMapCamera *)camera
 {
-    self = [super init];
+    self = [self init];
     if (self) {
-        self.delegate = self;
         _initialCamera = camera;
-        
         HNMapLog(@"Set initial camera variable to %@", camera);
-
         // Initialization code
     }
     return self;

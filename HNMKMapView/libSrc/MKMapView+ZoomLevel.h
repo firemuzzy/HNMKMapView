@@ -40,7 +40,7 @@
  */
 - (NSUInteger)zoomLevel;
 
-- (NSNumber *)getZoomLevelForFetch;
+- (NSNumber *)zoomLevelForFetch;
 
 // Helper
 + (double)originXForLongitude:(double)longitude;
