@@ -183,7 +183,7 @@
     return zoomLevel;
 }
 
-- (NSNumber *)getZoomLevelForFetch {
+- (NSNumber *)zoomLevelForFetch {
     NSUInteger v = self.zoomLevel + 1;
     if(v >= 18) {
         return nil;
