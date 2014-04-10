@@ -61,6 +61,10 @@
                                       self.region.center.longitude - self.region.span.longitudeDelta / 2.0);
 }
 
+-(FZSphericalTrapezium) latitudeLongitudeBoundingBox {
+    return FZSphericalTrapeziumMake(self.southWest, self.northEast);
+}
+
 //
 // Proxying MKMapView methods belo
 //

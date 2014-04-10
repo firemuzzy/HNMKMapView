@@ -10,6 +10,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
+typedef struct {
+	CLLocationCoordinate2D southWest;
+	CLLocationCoordinate2D northEast;
+} FZSphericalTrapezium;
+
+FZSphericalTrapezium FZSphericalTrapeziumMake(CLLocationCoordinate2D southwest, CLLocationCoordinate2D northeast);
+
 NSString *MKStringFromCoordinate(CLLocationCoordinate2D coordinate);
 
 NSString *MKStringCoordinateSpan(MKCoordinateSpan span);

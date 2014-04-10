@@ -7,6 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
+#import "FZMapFoundation.h"
 
 #ifndef HNMapLog
     #if LOG_HN_MAP
@@ -31,5 +32,6 @@
 
 -(CLLocationCoordinate2D) northEast;
 -(CLLocationCoordinate2D) southWest;
+-(FZSphericalTrapezium) latitudeLongitudeBoundingBox;
 
 @end

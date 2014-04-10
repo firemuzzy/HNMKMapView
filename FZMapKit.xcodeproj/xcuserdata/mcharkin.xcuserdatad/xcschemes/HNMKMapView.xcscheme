@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3FD4768A18F1F9C100858258"
-               BuildableName = "HNMKMapView.app"
+               BuildableName = "FZMapKit.app"
                BlueprintName = "FZMapKit"
                ReferencedContainer = "container:FZMapKit.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3FD476A518F1F9C200858258"
-               BuildableName = "HNMKMapViewTests.xctest"
+               BuildableName = "FZMapKitTests.xctest"
                BlueprintName = "FZMapKitTests"
                ReferencedContainer = "container:FZMapKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
-            BuildableName = "HNMKMapView.app"
+            BuildableName = "FZMapKit.app"
             BlueprintName = "FZMapKit"
             ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
-            BuildableName = "HNMKMapView.app"
+            BuildableName = "FZMapKit.app"
             BlueprintName = "FZMapKit"
             ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3FD4768A18F1F9C100858258"
-            BuildableName = "HNMKMapView.app"
+            BuildableName = "FZMapKit.app"
             BlueprintName = "FZMapKit"
             ReferencedContainer = "container:FZMapKit.xcodeproj">
          </BuildableReference>

@@ -52,6 +52,13 @@ MKMapRect MKMapRectForCoordinateRegion(MKCoordinateRegion region)
 }
 
 
+FZSphericalTrapezium FZSphericalTrapeziumMake(CLLocationCoordinate2D southwest, CLLocationCoordinate2D northeast) {
+    FZSphericalTrapezium trap;
+    trap.southWest = southwest;
+    trap.northEast = northeast;
+    return trap;
+}
+
 @implementation FZMapFoundation
 
 @end
