@@ -170,6 +170,16 @@
 }
 
 
+-(MKOverlayRenderer *) mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    if([self.fzDelegate respondsToSelector:@selector(mapView:rendererForOverlay:)]) {
+        return [self.fzDelegate mapView:mapView rendererForOverlay:overlay];
+    } else {
+        return nil;
+    }
+}
+
+
+
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     HNMapLog(@"mapViewWillStartLocatingUser");
     if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartLocatingUser:)]) {
