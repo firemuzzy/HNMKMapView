@@ -75,7 +75,14 @@
     }
 }
 
-- (id)initWithInitialCamera:(MKMapCamera *)camera
+- (instancetype)initWithFrame:(CGRect)frame mapID:(NSString *)mapID initialCamera:(MKMapCamera *)camera {
+    if(self = [super initWithFrame:frame mapID:mapID]) {
+        _initialCamera = camera;
+    }
+    return self;
+}
+
+- (instancetype)initWithInitialCamera:(MKMapCamera *)camera
 {
     self = [self init];
     if (self) {

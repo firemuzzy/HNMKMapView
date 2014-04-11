@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
  
   s.framework = 'MapKit'
   s.requires_arc = true
+  s.dependency 'MBXMapKit', '0.2.1'
 end

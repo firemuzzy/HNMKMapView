@@ -7,6 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <MBXMapKit.h>
 #import "FZMapFoundation.h"
 
 #ifndef HNMapLog
@@ -25,11 +26,12 @@
 - (void)doubleTapOnMapView:(MKMapView *)mapView;
 @end
 
-@interface FZMapView : MKMapView
+@interface FZMapView : MBXMapView
 
 @property (nonatomic, strong) id<FZMapViewDelegate> fzDelegate;
 
-- (id)initWithInitialCamera:(MKMapCamera *)camera;
+- (instancetype)initWithFrame:(CGRect)frame mapID:(NSString *)mapID initialCamera:(MKMapCamera *)camera;
+- (instancetype)initWithInitialCamera:(MKMapCamera *)camera;
 
 -(CLLocationCoordinate2D) northEast;
 -(CLLocationCoordinate2D) southWest;

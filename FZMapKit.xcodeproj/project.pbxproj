@@ -1,495 +1,1219 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */; };
-		3F2B8B9018F63AB70002AB6B /* FZMapFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */; };
-		3FD4768F18F1F9C100858258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4768E18F1F9C100858258 /* Foundation.framework */; };
-		3FD4769118F1F9C100858258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769018F1F9C100858258 /* CoreGraphics.framework */; };
-		3FD4769318F1F9C100858258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769218F1F9C100858258 /* UIKit.framework */; };
-		3FD4769918F1F9C100858258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FD4769718F1F9C100858258 /* InfoPlist.strings */; };
-		3FD4769B18F1F9C100858258 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4769A18F1F9C100858258 /* main.m */; };
-		3FD4769F18F1F9C100858258 /* HNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4769E18F1F9C100858258 /* HNAppDelegate.m */; };
-		3FD476A118F1F9C100858258 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD476A018F1F9C100858258 /* Images.xcassets */; };
-		3FD476A818F1F9C200858258 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD476A718F1F9C200858258 /* XCTest.framework */; };
-		3FD476A918F1F9C200858258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4768E18F1F9C100858258 /* Foundation.framework */; };
-		3FD476AA18F1F9C200858258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD4769218F1F9C100858258 /* UIKit.framework */; };
-		3FD476B218F1F9C200858258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FD476B018F1F9C200858258 /* InfoPlist.strings */; };
-		3FD476B418F1F9C200858258 /* HNMKMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */; };
-		3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476BE18F1FB9800858258 /* HNTextViewController.m */; };
-		3FD476C118F1FC0A00858258 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD476C018F1FC0A00858258 /* MapKit.framework */; };
-		3FD476C418F1FDD500858258 /* FZMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD476C318F1FDD500858258 /* FZMapView.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3FD476AB18F1F9C200858258 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3FD4768318F1F9C100858258 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3FD4768A18F1F9C100858258;
-			remoteInfo = HNMKMapView;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+HearNearMap.h"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.h"; sourceTree = "<group>"; };
-		3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+HearNearMap.m"; path = "HNMKMapView/libSrc/MKMapView+HearNearMap.m"; sourceTree = "<group>"; };
-		3F2B8B8E18F63AB70002AB6B /* FZMapFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZMapFoundation.h; path = HNMKMapView/libSrc/FZMapFoundation.h; sourceTree = "<group>"; };
-		3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZMapFoundation.m; path = HNMKMapView/libSrc/FZMapFoundation.m; sourceTree = "<group>"; };
-		3FD4768B18F1F9C100858258 /* FZMapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FZMapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FD4768E18F1F9C100858258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3FD4769018F1F9C100858258 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3FD4769218F1F9C100858258 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3FD4769618F1F9C100858258 /* FZMapKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FZMapKit-Info.plist"; sourceTree = "<group>"; };
-		3FD4769818F1F9C100858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3FD4769A18F1F9C100858258 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3FD4769C18F1F9C100858258 /* FZMapKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FZMapKit-Prefix.pch"; sourceTree = "<group>"; };
-		3FD4769D18F1F9C100858258 /* HNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNAppDelegate.h; sourceTree = "<group>"; };
-		3FD4769E18F1F9C100858258 /* HNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNAppDelegate.m; sourceTree = "<group>"; };
-		3FD476A018F1F9C100858258 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FZMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FD476A718F1F9C200858258 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3FD476AF18F1F9C200858258 /* HNMKMapViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HNMKMapViewTests-Info.plist"; sourceTree = "<group>"; };
-		3FD476B118F1F9C200858258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNMKMapViewTests.m; sourceTree = "<group>"; };
-		3FD476BD18F1FB9800858258 /* HNTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HNTextViewController.h; path = helperProj/HNTextViewController.h; sourceTree = "<group>"; };
-		3FD476BE18F1FB9800858258 /* HNTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HNTextViewController.m; path = helperProj/HNTextViewController.m; sourceTree = "<group>"; };
-		3FD476C018F1FC0A00858258 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3FD476C218F1FDD500858258 /* FZMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZMapView.h; path = HNMKMapView/libSrc/FZMapView.h; sourceTree = "<group>"; };
-		3FD476C318F1FDD500858258 /* FZMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZMapView.m; path = HNMKMapView/libSrc/FZMapView.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		3FD4768818F1F9C100858258 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD476C118F1FC0A00858258 /* MapKit.framework in Frameworks */,
-				3FD4769118F1F9C100858258 /* CoreGraphics.framework in Frameworks */,
-				3FD4769318F1F9C100858258 /* UIKit.framework in Frameworks */,
-				3FD4768F18F1F9C100858258 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3FD476A318F1F9C200858258 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD476A818F1F9C200858258 /* XCTest.framework in Frameworks */,
-				3FD476AA18F1F9C200858258 /* UIKit.framework in Frameworks */,
-				3FD476A918F1F9C200858258 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		3F0C732C18F20C150096BF60 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				3F0C732918F20A840096BF60 /* MKMapView+HearNearMap.h */,
-				3F0C732A18F20A840096BF60 /* MKMapView+HearNearMap.m */,
-				3FD476C218F1FDD500858258 /* FZMapView.h */,
-				3FD476C318F1FDD500858258 /* FZMapView.m */,
-				3F2B8B8E18F63AB70002AB6B /* FZMapFoundation.h */,
-				3F2B8B8F18F63AB70002AB6B /* FZMapFoundation.m */,
-			);
-			name = lib;
-			sourceTree = "<group>";
-		};
-		3FD4768218F1F9C100858258 = {
-			isa = PBXGroup;
-			children = (
-				3F0C732C18F20C150096BF60 /* lib */,
-				3FD4769418F1F9C100858258 /* HNMKMapView */,
-				3FD476AD18F1F9C200858258 /* HNMKMapViewTests */,
-				3FD4768D18F1F9C100858258 /* Frameworks */,
-				3FD4768C18F1F9C100858258 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		3FD4768C18F1F9C100858258 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3FD4768B18F1F9C100858258 /* FZMapKit.app */,
-				3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3FD4768D18F1F9C100858258 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3FD476C018F1FC0A00858258 /* MapKit.framework */,
-				3FD4768E18F1F9C100858258 /* Foundation.framework */,
-				3FD4769018F1F9C100858258 /* CoreGraphics.framework */,
-				3FD4769218F1F9C100858258 /* UIKit.framework */,
-				3FD476A718F1F9C200858258 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3FD4769418F1F9C100858258 /* HNMKMapView */ = {
-			isa = PBXGroup;
-			children = (
-				3FD4769D18F1F9C100858258 /* HNAppDelegate.h */,
-				3FD4769E18F1F9C100858258 /* HNAppDelegate.m */,
-				3FD476A018F1F9C100858258 /* Images.xcassets */,
-				3FD4769518F1F9C100858258 /* Supporting Files */,
-				3FD476BD18F1FB9800858258 /* HNTextViewController.h */,
-				3FD476BE18F1FB9800858258 /* HNTextViewController.m */,
-			);
-			path = HNMKMapView;
-			sourceTree = "<group>";
-		};
-		3FD4769518F1F9C100858258 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3FD4769618F1F9C100858258 /* FZMapKit-Info.plist */,
-				3FD4769718F1F9C100858258 /* InfoPlist.strings */,
-				3FD4769A18F1F9C100858258 /* main.m */,
-				3FD4769C18F1F9C100858258 /* FZMapKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3FD476AD18F1F9C200858258 /* HNMKMapViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				3FD476B318F1F9C200858258 /* HNMKMapViewTests.m */,
-				3FD476AE18F1F9C200858258 /* Supporting Files */,
-			);
-			path = HNMKMapViewTests;
-			sourceTree = "<group>";
-		};
-		3FD476AE18F1F9C200858258 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3FD476AF18F1F9C200858258 /* HNMKMapViewTests-Info.plist */,
-				3FD476B018F1F9C200858258 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		3FD4768A18F1F9C100858258 /* FZMapKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKit" */;
-			buildPhases = (
-				3FD4768718F1F9C100858258 /* Sources */,
-				3FD4768818F1F9C100858258 /* Frameworks */,
-				3FD4768918F1F9C100858258 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FZMapKit;
-			productName = HNMKMapView;
-			productReference = 3FD4768B18F1F9C100858258 /* FZMapKit.app */;
-			productType = "com.apple.product-type.application";
-		};
-		3FD476A518F1F9C200858258 /* FZMapKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKitTests" */;
-			buildPhases = (
-				3FD476A218F1F9C200858258 /* Sources */,
-				3FD476A318F1F9C200858258 /* Frameworks */,
-				3FD476A418F1F9C200858258 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3FD476AC18F1F9C200858258 /* PBXTargetDependency */,
-			);
-			name = FZMapKitTests;
-			productName = HNMKMapViewTests;
-			productReference = 3FD476A618F1F9C200858258 /* FZMapKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		3FD4768318F1F9C100858258 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = HN;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = HearNear;
-				TargetAttributes = {
-					3FD476A518F1F9C200858258 = {
-						TestTargetID = 3FD4768A18F1F9C100858258;
-					};
-				};
-			};
-			buildConfigurationList = 3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "FZMapKit" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 3FD4768218F1F9C100858258;
-			productRefGroup = 3FD4768C18F1F9C100858258 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				3FD4768A18F1F9C100858258 /* FZMapKit */,
-				3FD476A518F1F9C200858258 /* FZMapKitTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		3FD4768918F1F9C100858258 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD4769918F1F9C100858258 /* InfoPlist.strings in Resources */,
-				3FD476A118F1F9C100858258 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3FD476A418F1F9C200858258 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD476B218F1F9C200858258 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		3FD4768718F1F9C100858258 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD476BF18F1FB9800858258 /* HNTextViewController.m in Sources */,
-				3F2B8B9018F63AB70002AB6B /* FZMapFoundation.m in Sources */,
-				3F0C732B18F20A840096BF60 /* MKMapView+HearNearMap.m in Sources */,
-				3FD4769F18F1F9C100858258 /* HNAppDelegate.m in Sources */,
-				3FD4769B18F1F9C100858258 /* main.m in Sources */,
-				3FD476C418F1FDD500858258 /* FZMapView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3FD476A218F1F9C200858258 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FD476B418F1F9C200858258 /* HNMKMapViewTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3FD476AC18F1F9C200858258 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3FD4768A18F1F9C100858258 /* FZMapKit */;
-			targetProxy = 3FD476AB18F1F9C200858258 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3FD4769718F1F9C100858258 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FD4769818F1F9C100858258 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3FD476B018F1F9C200858258 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FD476B118F1F9C200858258 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		3FD476B518F1F9C200858258 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3FD476B618F1F9C200858258 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3FD476B818F1F9C200858258 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/FZMapKit-Prefix.pch";
-				INFOPLIST_FILE = "HNMKMapView/FZMapKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = FZMapKit;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		3FD476B918F1F9C200858258 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/FZMapKit-Prefix.pch";
-				INFOPLIST_FILE = "HNMKMapView/FZMapKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = FZMapKit;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		3FD476BB18F1F9C200858258 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
-				PRODUCT_NAME = FZMapKitTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3FD476BC18F1F9C200858258 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HNMKMapView/HNMKMapView-Prefix.pch";
-				INFOPLIST_FILE = "HNMKMapViewTests/HNMKMapViewTests-Info.plist";
-				PRODUCT_NAME = FZMapKitTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		3FD4768618F1F9C100858258 /* Build configuration list for PBXProject "FZMapKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3FD476B518F1F9C200858258 /* Debug */,
-				3FD476B618F1F9C200858258 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3FD476B718F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3FD476B818F1F9C200858258 /* Debug */,
-				3FD476B918F1F9C200858258 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3FD476BA18F1F9C200858258 /* Build configuration list for PBXNativeTarget "FZMapKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3FD476BB18F1F9C200858258 /* Debug */,
-				3FD476BC18F1F9C200858258 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 3FD4768318F1F9C100858258 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0F5E3636A7834CA59DA12BC4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>11023C4422F4488A8FBFA40A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3F0C732918F20A840096BF60</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MKMapView+HearNearMap.h</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/MKMapView+HearNearMap.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F0C732A18F20A840096BF60</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MKMapView+HearNearMap.m</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/MKMapView+HearNearMap.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F0C732B18F20A840096BF60</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3F0C732A18F20A840096BF60</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3F0C732C18F20C150096BF60</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3F0C732918F20A840096BF60</string>
+				<string>3F0C732A18F20A840096BF60</string>
+				<string>3FD476C218F1FDD500858258</string>
+				<string>3FD476C318F1FDD500858258</string>
+				<string>3F2B8B8E18F63AB70002AB6B</string>
+				<string>3F2B8B8F18F63AB70002AB6B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>lib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F2B8B8E18F63AB70002AB6B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FZMapFoundation.h</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/FZMapFoundation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F2B8B8F18F63AB70002AB6B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FZMapFoundation.m</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/FZMapFoundation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F2B8B9018F63AB70002AB6B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3F2B8B8F18F63AB70002AB6B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4768218F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3F0C732C18F20C150096BF60</string>
+				<string>3FD4769418F1F9C100858258</string>
+				<string>3FD476AD18F1F9C200858258</string>
+				<string>3FD4768D18F1F9C100858258</string>
+				<string>3FD4768C18F1F9C100858258</string>
+				<string>0F5E3636A7834CA59DA12BC4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4768318F1F9C100858258</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>HN</string>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>HearNear</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>3FD476A518F1F9C200858258</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>3FD4768A18F1F9C100858258</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>3FD4768618F1F9C100858258</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>3FD4768218F1F9C100858258</string>
+			<key>productRefGroup</key>
+			<string>3FD4768C18F1F9C100858258</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>3FD4768A18F1F9C100858258</string>
+				<string>3FD476A518F1F9C200858258</string>
+			</array>
+		</dict>
+		<key>3FD4768618F1F9C100858258</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3FD476B518F1F9C200858258</string>
+				<string>3FD476B618F1F9C200858258</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3FD4768718F1F9C100858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD476BF18F1FB9800858258</string>
+				<string>3F2B8B9018F63AB70002AB6B</string>
+				<string>3F0C732B18F20A840096BF60</string>
+				<string>3FD4769F18F1F9C100858258</string>
+				<string>3FD4769B18F1F9C100858258</string>
+				<string>3FD476C418F1FDD500858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD4768818F1F9C100858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD476C118F1FC0A00858258</string>
+				<string>3FD4769118F1F9C100858258</string>
+				<string>3FD4769318F1F9C100858258</string>
+				<string>3FD4768F18F1F9C100858258</string>
+				<string>F51BDF63504344FB8BF1CAF1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD4768918F1F9C100858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD4769918F1F9C100858258</string>
+				<string>3FD476A118F1F9C100858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD4768A18F1F9C100858258</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3FD476B718F1F9C200858258</string>
+			<key>buildPhases</key>
+			<array>
+				<string>B77E22BE8C5348ECB422424C</string>
+				<string>3FD4768718F1F9C100858258</string>
+				<string>3FD4768818F1F9C100858258</string>
+				<string>3FD4768918F1F9C100858258</string>
+				<string>11023C4422F4488A8FBFA40A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FZMapKit</string>
+			<key>productName</key>
+			<string>HNMKMapView</string>
+			<key>productReference</key>
+			<string>3FD4768B18F1F9C100858258</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>3FD4768B18F1F9C100858258</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FZMapKit.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3FD4768C18F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD4768B18F1F9C100858258</string>
+				<string>3FD476A618F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4768D18F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD476C018F1FC0A00858258</string>
+				<string>3FD4768E18F1F9C100858258</string>
+				<string>3FD4769018F1F9C100858258</string>
+				<string>3FD4769218F1F9C100858258</string>
+				<string>3FD476A718F1F9C200858258</string>
+				<string>F44AF3E708964BAE9D607452</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4768E18F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>3FD4768F18F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4768E18F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4769018F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>3FD4769118F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769018F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4769218F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>3FD4769318F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769218F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4769418F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD4769D18F1F9C100858258</string>
+				<string>3FD4769E18F1F9C100858258</string>
+				<string>3FD476A018F1F9C100858258</string>
+				<string>3FD4769518F1F9C100858258</string>
+				<string>3FD476BD18F1FB9800858258</string>
+				<string>3FD476BE18F1FB9800858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>HNMKMapView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769518F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD4769618F1F9C100858258</string>
+				<string>3FD4769718F1F9C100858258</string>
+				<string>3FD4769A18F1F9C100858258</string>
+				<string>3FD4769C18F1F9C100858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769618F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>FZMapKit-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769718F1F9C100858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD4769818F1F9C100858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769818F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769918F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769718F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4769A18F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769B18F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769A18F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD4769C18F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FZMapKit-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769D18F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>HNAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769E18F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>HNAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD4769F18F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769E18F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476A018F1F9C100858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476A118F1F9C100858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476A018F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476A218F1F9C200858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD476B418F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD476A318F1F9C200858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD476A818F1F9C200858258</string>
+				<string>3FD476AA18F1F9C200858258</string>
+				<string>3FD476A918F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD476A418F1F9C200858258</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FD476B218F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3FD476A518F1F9C200858258</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3FD476BA18F1F9C200858258</string>
+			<key>buildPhases</key>
+			<array>
+				<string>3FD476A218F1F9C200858258</string>
+				<string>3FD476A318F1F9C200858258</string>
+				<string>3FD476A418F1F9C200858258</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>3FD476AC18F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FZMapKitTests</string>
+			<key>productName</key>
+			<string>HNMKMapViewTests</string>
+			<key>productReference</key>
+			<string>3FD476A618F1F9C200858258</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>3FD476A618F1F9C200858258</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FZMapKitTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3FD476A718F1F9C200858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>3FD476A818F1F9C200858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476A718F1F9C200858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476A918F1F9C200858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4768E18F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476AA18F1F9C200858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD4769218F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476AB18F1F9C200858258</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>3FD4768318F1F9C100858258</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>3FD4768A18F1F9C100858258</string>
+			<key>remoteInfo</key>
+			<string>HNMKMapView</string>
+		</dict>
+		<key>3FD476AC18F1F9C200858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>3FD4768A18F1F9C100858258</string>
+			<key>targetProxy</key>
+			<string>3FD476AB18F1F9C200858258</string>
+		</dict>
+		<key>3FD476AD18F1F9C200858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD476B318F1F9C200858258</string>
+				<string>3FD476AE18F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>HNMKMapViewTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476AE18F1F9C200858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD476AF18F1F9C200858258</string>
+				<string>3FD476B018F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476AF18F1F9C200858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>HNMKMapViewTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476B018F1F9C200858258</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FD476B118F1F9C200858258</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476B118F1F9C200858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476B218F1F9C200858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476B018F1F9C200858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476B318F1F9C200858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>HNMKMapViewTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476B418F1F9C200858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476B318F1F9C200858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476B518F1F9C200858258</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3FD476B618F1F9C200858258</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3FD476B718F1F9C200858258</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3FD476B818F1F9C200858258</string>
+				<string>3FD476B918F1F9C200858258</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3FD476B818F1F9C200858258</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0F5E3636A7834CA59DA12BC4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>HNMKMapView/FZMapKit-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>HNMKMapView/FZMapKit-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>FZMapKit</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3FD476B918F1F9C200858258</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0F5E3636A7834CA59DA12BC4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>HNMKMapView/FZMapKit-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>HNMKMapView/FZMapKit-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>FZMapKit</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3FD476BA18F1F9C200858258</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3FD476BB18F1F9C200858258</string>
+				<string>3FD476BC18F1F9C200858258</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3FD476BB18F1F9C200858258</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>HNMKMapView/HNMKMapView-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>HNMKMapViewTests/HNMKMapViewTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>FZMapKitTests</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3FD476BC18F1F9C200858258</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/HNMKMapView.app/HNMKMapView</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>HNMKMapView/HNMKMapView-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>HNMKMapViewTests/HNMKMapViewTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>FZMapKitTests</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3FD476BD18F1FB9800858258</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>HNTextViewController.h</string>
+			<key>path</key>
+			<string>helperProj/HNTextViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476BE18F1FB9800858258</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>HNTextViewController.m</string>
+			<key>path</key>
+			<string>helperProj/HNTextViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476BF18F1FB9800858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476BE18F1FB9800858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476C018F1FC0A00858258</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MapKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MapKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>3FD476C118F1FC0A00858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476C018F1FC0A00858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FD476C218F1FDD500858258</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FZMapView.h</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/FZMapView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476C318F1FDD500858258</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FZMapView.m</string>
+			<key>path</key>
+			<string>HNMKMapView/libSrc/FZMapView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD476C418F1FDD500858258</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FD476C318F1FDD500858258</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B77E22BE8C5348ECB422424C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>F44AF3E708964BAE9D607452</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F51BDF63504344FB8BF1CAF1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F44AF3E708964BAE9D607452</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>3FD4768318F1F9C100858258</string>
+</dict>
+</plist>
