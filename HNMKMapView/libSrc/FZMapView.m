@@ -9,7 +9,7 @@
 #import "FZMapView.h"
 #import "MKMapView+HearNearMap.h"
 
-@interface FZMapView ()<MKMapViewDelegate>
+@interface FZMapView ()<MKMapViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) MKMapCamera *initialCamera;
 
@@ -40,6 +40,7 @@
     if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
     _doubleTapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapOnMapView:)];
     _doubleTapOnMapRecognizer.numberOfTapsRequired = 2;
+    _doubleTapOnMapRecognizer.delegate = self;
     return _doubleTapOnMapRecognizer;
 }
 
@@ -59,6 +60,7 @@
     if(_tapOnMapRecognizer) return _tapOnMapRecognizer;
     _tapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnMapView:)];
     [_tapOnMapRecognizer requireGestureRecognizerToFail:self.doubleTapOnMapRecognizer];
+    _tapOnMapRecognizer.delegate = self;
     return _tapOnMapRecognizer;
 }
 
@@ -257,4 +259,8 @@
     }
 }
 
+#pragma mark UIGestureRecognizerDelegate
+-(BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
 @end
