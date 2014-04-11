@@ -36,6 +36,36 @@
     return self;
 }
 
+-(instancetype) initWithFrame:(CGRect)frame mapID:(NSString *)mapID {
+    if(self = [super initWithFrame:frame mapID:mapID]) {
+        self.delegate = self;
+        [self addGestureRecognizer:self.tapOnMapRecognizer];
+        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
+    }
+    return self;
+}
+
+
+-(instancetype)initWithInitialCamera:(MKMapCamera *)camera {
+    self = [self init];
+    if (self) {
+        _initialCamera = camera;
+        HNMapLog(@"Set initial camera variable to %@", camera);
+        // Initialization code
+    }
+    return self;
+}
+
+-(instancetype)initWithFrame:(CGRect)frame mapID:(NSString *)mapID initialCamera:(MKMapCamera *)camera {
+    self = [self initWithFrame:frame mapID:mapID];
+    if (self) {
+        _initialCamera = camera;
+        HNMapLog(@"Set initial camera variable to %@", camera);
+        // Initialization code
+    }
+    return self;
+}
+
 -(UITapGestureRecognizer *) doubleTapOnMapRecognizer {
     if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
     _doubleTapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapOnMapView:)];
@@ -74,18 +104,6 @@
         }
     }
 }
-
-- (id)initWithInitialCamera:(MKMapCamera *)camera
-{
-    self = [self init];
-    if (self) {
-        _initialCamera = camera;
-        HNMapLog(@"Set initial camera variable to %@", camera);
-        // Initialization code
-    }
-    return self;
-}
-
 
 - (void)_openedToInitialcamera {
     if([self.fzDelegate respondsToSelector:@selector(mapView:didOpenToInitialCamera:) ]) {
