@@ -21,7 +21,8 @@
 @property (atomic, assign) BOOL lockingOnToCurrentLocation;
 
 @property (atomic, strong) MKUserLocation *lastUserLocation;
-
+@property (nonatomic, strong) UITapGestureRecognizer *tapOnMapRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTapOnMapRecognizer;
 @end
 
 @implementation FZMapView
@@ -29,8 +30,47 @@
 - (instancetype) init {
     if(self = [super init]) {
         self.delegate = self;
+        [self addGestureRecognizer:self.tapOnMapRecognizer];
+        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
     return self;
+}
+
+-(UITapGestureRecognizer *) doubleTapOnMapRecognizer {
+    if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
+    _doubleTapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapOnMapView:)];
+    _doubleTapOnMapRecognizer.numberOfTapsRequired = 2;
+    return _doubleTapOnMapRecognizer;
+}
+
+-(void) doubleTapOnMapView: (UITapGestureRecognizer *) doubleTapOnMapRecognizer {
+    CGPoint p = [doubleTapOnMapRecognizer locationInView:self];
+    UIView *v = [self hitTest:p withEvent:nil];
+    
+    if(![v isKindOfClass:[MKAnnotationView class]]) {
+        if([self.fzDelegate respondsToSelector:@selector(doubleTapOnMapView:) ]) {
+            [self.fzDelegate doubleTapOnMapView:self];
+        }
+    }
+}
+
+
+-(UITapGestureRecognizer *) tapOnMapRecognizer {
+    if(_tapOnMapRecognizer) return _tapOnMapRecognizer;
+    _tapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnMapView:)];
+    [_tapOnMapRecognizer requireGestureRecognizerToFail:self.doubleTapOnMapRecognizer];
+    return _tapOnMapRecognizer;
+}
+
+-(void) tapOnMapView: (UITapGestureRecognizer *) tapOnMapRecognizer {
+    CGPoint p = [tapOnMapRecognizer locationInView:self];
+    UIView *v = [self hitTest:p withEvent:nil];
+    
+    if(![v isKindOfClass:[MKAnnotationView class]]) {
+        if([self.fzDelegate respondsToSelector:@selector(tapOnMapView:) ]) {
+            [self.fzDelegate tapOnMapView:self];
+        }
+    }
 }
 
 - (id)initWithInitialCamera:(MKMapCamera *)camera
