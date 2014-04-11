@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E3D45FED-F134-4FC9-8276-04B0D5EF4BDA</string>
+	<string>456D60E9-BDEE-4725-A3B1-974CB3D045BA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FZMapKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7C9D9999-9250-4474-90BF-6FFA7A796DAF</key>
-		<string>ssh://github.com/firemuzzy/HNMKMapView.git</string>
+		<key>83BD7925-0E45-469C-A9F6-6E9AEF9D2772</key>
+		<string>https://github.com/firemuzzy/HNMKMapView</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FZMapKit.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7C9D9999-9250-4474-90BF-6FFA7A796DAF</key>
+		<key>83BD7925-0E45-469C-A9F6-6E9AEF9D2772</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/firemuzzy/HNMKMapView.git</string>
+	<string>https://github.com/firemuzzy/HNMKMapView</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7C9D9999-9250-4474-90BF-6FFA7A796DAF</string>
+	<string>83BD7925-0E45-469C-A9F6-6E9AEF9D2772</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7C9D9999-9250-4474-90BF-6FFA7A796DAF</string>
+			<string>83BD7925-0E45-469C-A9F6-6E9AEF9D2772</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HNMKMapView</string>
 		</dict>

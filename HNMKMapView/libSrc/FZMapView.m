@@ -13,12 +13,12 @@
 
 @property (nonatomic, strong) MKMapCamera *initialCamera;
 
-@property (atomic, assign) BOOL didPreformFirstRender;
-@property (atomic, assign) BOOL initiatedFirstCameraSet;
+//@property (atomic, assign) BOOL didPreformFirstRender;
+//@property (atomic, assign) BOOL initiatedFirstCameraSet;
 
-@property (atomic, assign) BOOL didPreformOnFirstOpen;
+//@property (atomic, assign) BOOL didPreformOnFirstOpen;
 
-@property (atomic, assign) BOOL lockingOnToCurrentLocation;
+//@property (atomic, assign) BOOL lockingOnToCurrentLocation;
 
 @property (atomic, strong) MKUserLocation *lastUserLocation;
 @property (nonatomic, strong) UITapGestureRecognizer *tapOnMapRecognizer;
@@ -108,7 +108,7 @@
 - (void)_openedToInitialcamera {
     if([self.fzDelegate respondsToSelector:@selector(mapView:didOpenToInitialCamera:) ]) {
         HNMapLog(@"Opened to initial camera %@", self.initialCamera);
-        self.didPreformOnFirstOpen = YES;
+//        self.didPreformOnFirstOpen = YES;
         [self.fzDelegate mapView:self didOpenToInitialCamera:self.initialCamera];
     }
     
@@ -134,9 +134,9 @@
 //
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
     // drop all region changed events untill the feirs render starts happening, because until then the data is shit
-    if(!self.didPreformFirstRender) return;
+//    if(!self.didPreformFirstRender) return;
     
-    if(!self.didPreformOnFirstOpen) return;
+//    if(!self.didPreformOnFirstOpen) return;
     
     HNMapLog(@"regionWillChangeAnimated %@ animated:%@", MKStringFromCoordinateRegion(mapView.region), animated ? @"YES" : @"NO");
     if([self.fzDelegate respondsToSelector:@selector(mapView:regionWillChangeAnimated:) ]) {
@@ -146,14 +146,14 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     // drop all region changed events untill the feirs render starts happening, because until then the data is shit
-    if(!self.didPreformFirstRender) return;
+//    if(!self.didPreformFirstRender) return;
     
-    if(self.initialCamera && self.initiatedFirstCameraSet && MKMapCamerasEqual(self.camera, self.initialCamera)) {
-        [self _openedToInitialcamera];
-        return;
-    }
+//    if(self.initialCamera && self.initiatedFirstCameraSet && MKMapCamerasEqual(self.camera, self.initialCamera)) {
+//        [self _openedToInitialcamera];
+//        return;
+//    }
     
-    if(!self.didPreformOnFirstOpen) return;
+//    if(!self.didPreformOnFirstOpen) return;
     
     HNMapLog(@"regionDidChangeAnimated %@ animated:%@", MKStringFromCoordinateRegion(mapView.region), animated ? @"YES" : @"NO");
     if([self.fzDelegate respondsToSelector:@selector(mapView:regionDidChangeAnimated:) ]) {
@@ -176,20 +176,20 @@
 }
 
 - (void)mapViewWillStartRenderingMap:(MKMapView *)mapView {
-    if(!self.didPreformFirstRender) {
-        HNMapLog(@"Preformed fierst render");
-        self.didPreformFirstRender = YES;
-    }
+//    if(!self.didPreformFirstRender) {
+//        HNMapLog(@"Preformed fierst render");
+//        self.didPreformFirstRender = YES;
+//    }
     
-    if(!self.initiatedFirstCameraSet) {
-        self.initiatedFirstCameraSet = YES;
-
-        if(self.initialCamera) {
-            [self setCamera:self.initialCamera animated:NO];
-        } else {
-            [self _openedToInitialcamera];
-        }
-    }
+//    if(!self.initiatedFirstCameraSet) {
+//        self.initiatedFirstCameraSet = YES;
+//
+//        if(self.initialCamera) {
+//            [self setCamera:self.initialCamera animated:NO];
+//        } else {
+//            [self _openedToInitialcamera];
+//        }
+//    }
     
     HNMapLog(@"mapViewWillStartRenderingMap %@", MKStringFromCoordinateRegion(mapView.region));
     if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartRenderingMap:)]) {
