@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FZMapKit'
-  s.version = '0.0.6'
+  s.version = '0.0.7'
   s.platform = :ios
   s.ios.deployment_target = '7.0'
 
@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
  
   s.framework = 'MapKit'
   s.requires_arc = true
+  s.dependency 'MBXMapKit', '0.2.1'
 end
