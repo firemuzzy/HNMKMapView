@@ -19,7 +19,6 @@
 
 #pragma mark -
 #pragma mark Map conversion methods
-
 + (double)originXForLongitude:(double)longitude {
     return round(MERCATOR_OFFSET + MERCATOR_RADIUS * longitude * M_PI / 180.0);
 }
@@ -169,16 +168,36 @@
 }
 
 - (NSUInteger)zoomLevel {
-    MKCoordinateRegion region = self.region;
+    CGPoint centerPt = CGPointMake(self.bounds.origin.x + self.bounds.size.width/2, self.bounds.origin.y + self.bounds.size.height/2);
+    CGPoint centerLeftPt = CGPointMake(self.bounds.origin.x, self.bounds.origin.y + self.bounds.size.height/2);
     
-    double centerPixelX  = [MKMapView originXForLongitude:region.center.longitude];
-    double topLeftPixelX = [MKMapView originXForLongitude:region.center.longitude - region.span.longitudeDelta / 2];
+    CGPoint rotatedCenterLeftPt;
     
-    double scaledMapWidth = (centerPixelX - topLeftPixelX) * 2;
+    CLLocationDirection cameraHeading = self.camera.heading;
+    if(cameraHeading > 0) {
+        // roate the center left to counteract the turn of the map
+        double radianAngle = (-self.camera.heading) * M_PI / 180.0;
+        CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(centerPt.x, centerPt.y);
+        CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(radianAngle);
+        CGAffineTransform customRotation = CGAffineTransformConcat(CGAffineTransformConcat( CGAffineTransformInvert(translateTransform), rotationTransform), translateTransform);
+        rotatedCenterLeftPt = CGPointApplyAffineTransform(centerLeftPt, customRotation);
+    } else {
+        rotatedCenterLeftPt = centerLeftPt;
+    }
+    
+    CLLocationCoordinate2D center = [self convertPoint:centerPt toCoordinateFromView:self];
+    CLLocationCoordinate2D centerLeft = [self convertPoint:rotatedCenterLeftPt toCoordinateFromView:self];
+                                                            
+    double centerPixelX  = [MKMapView originXForLongitude:center.longitude];
+    double centerLeftPixelX = [MKMapView originXForLongitude:centerLeft.longitude];
+    
+    double scaledMapWidth = (centerPixelX - centerLeftPixelX) * 2;
     CGSize mapSizeInPixels = self.bounds.size;
     double zoomScale = scaledMapWidth / mapSizeInPixels.width;
     double zoomExponent = log(zoomScale) / log(2);
     double zoomLevel = 20 - zoomExponent;
+    
+    NSLog(@"Zoom level: %f", zoomLevel);
     
     return zoomLevel;
 }
