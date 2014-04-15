@@ -10,6 +10,7 @@
 #import <MBXMapKit.h>
 #import "FZMapFoundation.h"
 #import <MBXMapKit.h>
+#import <FZMapable.h>
 
 #ifndef HNMapLog
     #if LOG_HN_MAP
@@ -37,5 +38,7 @@
 -(CLLocationCoordinate2D) northEast;
 -(CLLocationCoordinate2D) southWest;
 -(FZSphericalTrapezium) latitudeLongitudeBoundingBox;
+
+-(void)addMappables:(NSArray *)mappables withCurrentlySelected:(id<FZMapable>)currentlySelected;
 
 @end

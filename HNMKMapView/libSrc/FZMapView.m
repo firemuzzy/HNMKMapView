@@ -129,6 +129,59 @@
     return FZSphericalTrapeziumMake(self.southWest, self.northEast);
 }
 
+-(void)addMappables:(NSArray *)mappables withCurrentlySelected:(id<FZMapable>)currentlySelected {
+    MKAnnotationView *userLocationView;
+    
+    NSMutableDictionary *byId = [[NSMutableDictionary alloc] initWithCapacity:mappables.count];
+    for(id<FZMapable> mappable in mappables) {
+        NSParameterAssert(mappable._id);
+        
+        [byId setObject:mappable forKey:mappable._id];
+    }
+    
+    NSMutableArray *mappablesToRemove = [[NSMutableArray alloc] initWithCapacity:self.annotations.count];
+    NSMutableArray *viewsAnnotationsToRemove = [[NSMutableArray alloc] initWithCapacity:self.annotations.count];
+    [self.annotations enumerateObjectsUsingBlock:^(id<FZMapable> mappable, NSUInteger idx, BOOL *stop) {
+        if([mappable isKindOfClass:[MKUserLocation class]]) return;
+        if(![byId objectForKey:mappable._id] && ![currentlySelected._id isEqualToString:mappable._id] ) {
+            [mappablesToRemove addObject:mappable];
+            UIView *annotationView = [self viewForAnnotation:mappable];
+            if(annotationView) [viewsAnnotationsToRemove addObject:annotationView];
+        }
+    }];
+    
+    NSMutableDictionary *visibleById = [[NSMutableDictionary alloc] initWithCapacity:self.annotations.count];
+    for(id<FZMapable> mappable in self.annotations) {
+        if([mappable isKindOfClass:[MKUserLocation class]]) {
+            userLocationView = [self viewForAnnotation:mappable];
+            continue;
+        }
+        NSParameterAssert(mappable._id);
+        
+        [visibleById setObject:mappable forKey:mappable._id];
+    }
+    
+    NSMutableSet *newAnnotations = [[NSMutableSet alloc] initWithCapacity:mappables.count];
+    for(id<FZMapable>newMappable in mappables) {
+        id<FZMapable>visibleMappable = [visibleById objectForKey:newMappable._id];
+        if(!visibleMappable) {
+            [newAnnotations addObject:newMappable];
+        }
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self addAnnotations:[newAnnotations allObjects]];
+        [UIView animateWithDuration:.5f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            for(UIView *view in viewsAnnotationsToRemove) {
+                view.alpha = 0.f;
+            }
+        } completion:^(BOOL finished) {
+            [self removeAnnotations:viewsAnnotationsToRemove];
+            [userLocationView.superview bringSubviewToFront:userLocationView];
+        }];
+    });
+}
+
 //
 // Proxying MKMapView methods belo
 //
