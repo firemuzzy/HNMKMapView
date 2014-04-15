@@ -203,10 +203,10 @@
 }
 
 - (NSNumber *)zoomLevelForFetch {
-    NSUInteger v = (NSUInteger)(self.zoomLevel + 1.5);
+    NSUInteger v = MAX(2, (NSUInteger)(self.zoomLevel + 1.5));
     if(v >= 18) {
         return nil;
-    }else {
+    } else {
         return [NSNumber numberWithInteger:v];
     }
 }

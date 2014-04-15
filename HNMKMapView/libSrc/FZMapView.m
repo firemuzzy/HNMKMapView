@@ -118,19 +118,29 @@
 -(CLLocationCoordinate2D) northEast {
     CLLocationDegrees lat = self.region.center.latitude + self.region.span.latitudeDelta / 2.0;
     CLLocationDegrees peggedLat;
-    peggedLat = MAX(85, lat);
-    peggedLat = MIN(-85, peggedLat);
+    peggedLat = MIN(85, lat);
+    peggedLat = MAX(-85, peggedLat);
     
-    return CLLocationCoordinate2DMake(peggedLat, self.region.center.longitude + self.region.span.longitudeDelta / 2.0);
+    CLLocationDegrees lng = self.region.center.longitude + self.region.span.longitudeDelta / 2.0;
+    CLLocationDegrees peggedLng;
+    peggedLng = MAX(-180, lng);
+    peggedLng = MIN(180, peggedLng);
+    
+    return CLLocationCoordinate2DMake(peggedLat, peggedLng);
 }
 
 -(CLLocationCoordinate2D) southWest {
     CLLocationDegrees lat = self.region.center.latitude - self.region.span.latitudeDelta / 2.0;
     CLLocationDegrees peggedLat;
-    peggedLat = MAX(85, lat);
-    peggedLat = MIN(-85, peggedLat);
+    peggedLat = MIN(85, lat);
+    peggedLat = MAX(-85, peggedLat);
     
-    return CLLocationCoordinate2DMake(peggedLat, self.region.center.longitude - self.region.span.longitudeDelta / 2.0);
+    CLLocationDegrees lng = self.region.center.longitude - self.region.span.longitudeDelta / 2.0;
+    CLLocationDegrees peggedLng;
+    peggedLng = MAX(-180, lng);
+    peggedLng = MIN(180, peggedLng);
+    
+    return CLLocationCoordinate2DMake(peggedLat, peggedLng);
 }
 
 -(FZSphericalTrapezium) latitudeLongitudeBoundingBox {
