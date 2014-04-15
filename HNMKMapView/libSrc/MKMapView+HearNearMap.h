@@ -16,6 +16,7 @@
 -(CLLocationCoordinate2D) getCenterCoordinateinRect:(CGRect) rect;
 
 - (void)panDownByPixels:(CGFloat)pixels;
-- (MKMapCamera *) cameraOverCoordinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withEyeAltitude:(CLLocationDistance)altitude;
+
+- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance;
 
 @end

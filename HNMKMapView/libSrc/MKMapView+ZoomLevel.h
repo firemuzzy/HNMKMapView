@@ -38,7 +38,7 @@
  *
  * \returns Current zoom level value
  */
-- (NSUInteger)zoomLevel;
+- (double)zoomLevel;
 
 - (NSNumber *)zoomLevelForFetch;
 

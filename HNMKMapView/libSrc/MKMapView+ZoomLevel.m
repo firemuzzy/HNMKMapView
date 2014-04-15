@@ -167,7 +167,7 @@
 	return region;
 }
 
-- (NSUInteger)zoomLevel {
+- (double)zoomLevel {
     CGPoint centerPt = CGPointMake(self.bounds.origin.x + self.bounds.size.width/2, self.bounds.origin.y + self.bounds.size.height/2);
     CGPoint centerLeftPt = CGPointMake(self.bounds.origin.x, self.bounds.origin.y + self.bounds.size.height/2);
     
@@ -203,7 +203,7 @@
 }
 
 - (NSNumber *)zoomLevelForFetch {
-    NSUInteger v = self.zoomLevel + 1;
+    NSUInteger v = (NSUInteger)(self.zoomLevel + 1.5);
     if(v >= 18) {
         return nil;
     }else {

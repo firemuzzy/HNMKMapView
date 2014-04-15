@@ -50,31 +50,14 @@
     [self setCenterCoordinate:newCenterCoord animated:YES];
 }
 
-
-/*
- * DANGER: this is a hack, only use it to center on the point when opening a detail page, do not use to center map when begin editing
- * do not use in cases where you need the map position to be exact
- *
- */
-#define IOS_MAP_CAMERA_APERTURE (14.0/180.0 * M_PI)
-- (MKMapCamera *) cameraOverCoordinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withEyeAltitude:(CLLocationDistance)altitude {
-    if(CGRectEqualToRect(bound, CGRectZero)) return nil;
+- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance {
+    MKCoordinateRegion coordRegion = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance);
+    MKMapRect rect = MKMapRectForCoordinateRegion(coordRegion);
     
-    NSLog(@"Map Bounds: %@", NSStringFromCGRect(self.bounds));
-    NSLog(@"Provided bound: %@", NSStringFromCGRect(bound));
+    CGFloat insetBottom = self.bounds.size.height - bound.size.height;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, insetBottom, 0);
     
-    
-    CLLocationDistance verticalOffsetForCenter;
-    verticalOffsetForCenter = (altitude * tan(IOS_MAP_CAMERA_APERTURE) / bound.size.height) * (self.bounds.size.height);
-    NSLog(@"verticalOffsetForCenter: %f", verticalOffsetForCenter);
-    
-    CLLocationCoordinate2D offsetCenter = CLLocationCoordinateMovedSouthMake(coordinate, verticalOffsetForCenter);
-    NSLog(@"offsetCenter: (%f,%f)", offsetCenter.latitude, offsetCenter.longitude);
-    
-    CLLocationDistance offsetAltitude = (altitude * ((double)self.bounds.size.height)) / ((double)bound.size.height);
-    
-    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:offsetCenter fromEyeCoordinate:offsetCenter eyeAltitude:offsetAltitude];
-    return camera;
+    [self setVisibleMapRect:rect edgePadding:insets animated:YES];
 }
 
 @end
