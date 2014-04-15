@@ -194,7 +194,7 @@
                 view.alpha = 0.f;
             }
         } completion:^(BOOL finished) {
-            [self removeAnnotations:viewsAnnotationsToRemove];
+            [self removeAnnotations:mappablesToRemove];
             [userLocationView.superview bringSubviewToFront:userLocationView];
         }];
     });
