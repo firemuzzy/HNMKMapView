@@ -11,6 +11,7 @@
 
 @interface FZMapView ()<MKMapViewDelegate, UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) NSTimer *deselectTimer;
 @property (nonatomic, strong) MKMapCamera *initialCamera;
 
 //@property (atomic, assign) BOOL didPreformFirstRender;
@@ -289,16 +290,28 @@
     }
 }
 
+//Magic comes below
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    //    NSLog(@"SELECT");
+    [self.deselectTimer invalidate];
     if([self.fzDelegate respondsToSelector:@selector(mapView:didSelectAnnotationView:)]) {
         [self.fzDelegate mapView:mapView didSelectAnnotationView:view];
     }
 }
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+-(void)deselectTimerCalled:(NSTimer *) timer {
+    if(![self.deselectTimer isValid]) return;
+    //    NSLog(@"DESELECT");
+    NSDictionary *userInfo = timer.userInfo;
     if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
-        [self.fzDelegate mapView:mapView didDeselectAnnotationView:view];
+        [self.fzDelegate mapView:self didDeselectAnnotationView:userInfo[@"view"]];
     }
 }
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+    [self.deselectTimer invalidate];
+    self.deselectTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(deselectTimerCalled:) userInfo:@{@"view":view} repeats:NO];
+}
+//Magic ends
 
 
 -(MKOverlayRenderer *) mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
