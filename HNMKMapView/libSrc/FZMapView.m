@@ -292,7 +292,7 @@
 
 //Magic comes below
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    //    NSLog(@"SELECT");
+//    NSLog(@"SELECT");
     [self.deselectTimer invalidate];
     if([self.fzDelegate respondsToSelector:@selector(mapView:didSelectAnnotationView:)]) {
         [self.fzDelegate mapView:mapView didSelectAnnotationView:view];
@@ -300,8 +300,9 @@
 }
 -(void)deselectTimerCalled:(NSTimer *) timer {
     if(![self.deselectTimer isValid]) return;
-    //    NSLog(@"DESELECT");
     NSDictionary *userInfo = timer.userInfo;
+    [self.deselectTimer invalidate];
+//    NSLog(@"DESELECT");
     if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
         [self.fzDelegate mapView:self didDeselectAnnotationView:userInfo[@"view"]];
     }
