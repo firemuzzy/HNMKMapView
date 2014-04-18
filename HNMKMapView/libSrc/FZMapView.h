@@ -26,6 +26,7 @@
 - (void)mapView:(MKMapView *)mapView didOpenToInitialCamera:(MKMapCamera *)camera;
 - (void)tapOnMapView:(MKMapView *)mapView;
 - (void)doubleTapOnMapView:(MKMapView *)mapView;
+- (void)mapView:(MKMapView *)mapView didDeselectAfterTimerAnnotationView:(MKAnnotationView *)view;
 @end
 
 @interface FZMapView : MBXMapView

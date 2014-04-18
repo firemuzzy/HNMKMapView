@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FZMapKit'
-  s.version = '0.0.15'
+  s.version = '0.0.16'
   s.platform = :ios
   s.ios.deployment_target = '7.0'
 

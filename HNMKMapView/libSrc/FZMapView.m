@@ -303,14 +303,21 @@
     NSDictionary *userInfo = timer.userInfo;
     [self.deselectTimer invalidate];
 //    NSLog(@"DESELECT");
-    if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
-        [self.fzDelegate mapView:self didDeselectAnnotationView:userInfo[@"view"]];
+    [self mapView:self didDeselectAfterTimerAnnotationView:userInfo[@"view"]];
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAfterTimerAnnotationView:(MKAnnotationView *)view {
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAfterTimerAnnotationView:)]) {
+        [self.fzDelegate mapView:mapView didDeselectAfterTimerAnnotationView:view];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
     [self.deselectTimer invalidate];
     self.deselectTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(deselectTimerCalled:) userInfo:@{@"view":view} repeats:NO];
+    if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
+        [self.fzDelegate mapView:mapView didDeselectAnnotationView:view];
+    }
 }
 //Magic ends
 
