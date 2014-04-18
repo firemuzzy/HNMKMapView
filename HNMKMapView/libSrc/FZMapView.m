@@ -314,7 +314,7 @@
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
     [self.deselectTimer invalidate];
-    self.deselectTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(deselectTimerCalled:) userInfo:@{@"view":view} repeats:NO];
+    self.deselectTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(deselectTimerCalled:) userInfo:@{@"view":view?view:[NSNull null]} repeats:NO];
     if([self.fzDelegate respondsToSelector:@selector(mapView:didDeselectAnnotationView:)]) {
         [self.fzDelegate mapView:mapView didDeselectAnnotationView:view];
     }
