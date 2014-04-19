@@ -17,6 +17,6 @@
 
 - (void)panDownByPixels:(CGFloat)pixels;
 
-- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance;
+//- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance;
 
 @end

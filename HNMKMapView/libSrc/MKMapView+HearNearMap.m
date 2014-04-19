@@ -50,14 +50,34 @@
     [self setCenterCoordinate:newCenterCoord animated:YES];
 }
 
-- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance {
-    MKCoordinateRegion coordRegion = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance);
-    MKMapRect rect = MKMapRectForCoordinateRegion(coordRegion);
-    
-    CGFloat insetBottom = self.bounds.size.height - bound.size.height;
-    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, insetBottom, 0);
-    
-    [self setVisibleMapRect:rect edgePadding:insets animated:YES];
-}
+//- (void)centerCorrdinate:(CLLocationCoordinate2D)coordinate inRect:(CGRect)bound withDistanceFromCenter:(CLLocationDistance)distance {
+//    distance = 1.0;
+//    
+//    MKCoordinateRegion coordRegion = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance);
+//    MKMapRect rect = MKMapRectForCoordinateRegion(coordRegion);
+//    
+//    CGFloat insetTop = 0;
+//    CGFloat insetBottom = self.bounds.size.height - bound.size.height;
+//    UIEdgeInsets insets = UIEdgeInsetsMake(insetTop, 0, insetBottom, 0);
+//    
+//    NSLog(@"Map bound: %@", NSStringFromCGRect(self.bounds));
+//    NSLog(@"bound: %@", NSStringFromCGRect(bound));
+//    NSLog(@"Inset bottom: %f", insetBottom);
+//    
+//    MKMapRect rectThatFits = [self mapRectThatFits:rect edgePadding:insets];
+//    
+//    MKCoordinateRegion region = MKCoordinateRegionForMapRect(rect);
+//    NSLog(@"Adjusted region: %@", MKStringFromCoordinateRegion(region));
+//    
+//    CGRect newRect = [self convertRegion:region toRectToView:self];
+//    NSLog(@"Adjusted rect: %@", NSStringFromCGRect(newRect));
+//    
+//    NSLog(@"top left rect: %@", MKStringFromCoordinate([self convertPoint:newRect.origin toCoordinateFromView:self]));
+//    
+//    CGPoint pt = CGPointMake(newRect.origin.x + newRect.size.width, newRect.origin.y + newRect.size.height);
+//    NSLog(@"bot right rect: %@", MKStringFromCoordinate([self convertPoint:pt toCoordinateFromView:self]));
+//
+//    [self setVisibleMapRect:rectThatFits edgePadding:insets animated:YES];
+//}
 
 @end

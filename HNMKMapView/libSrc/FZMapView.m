@@ -161,10 +161,13 @@
     NSMutableArray *viewsAnnotationsToRemove = [[NSMutableArray alloc] initWithCapacity:self.annotations.count];
     [self.annotations enumerateObjectsUsingBlock:^(id<FZMapable> mappable, NSUInteger idx, BOOL *stop) {
         if([mappable isKindOfClass:[MKUserLocation class]]) return;
-        if(![byId objectForKey:mappable._id] && ![currentlySelected._id isEqualToString:mappable._id] ) {
-            [mappablesToRemove addObject:mappable];
-            UIView *annotationView = [self viewForAnnotation:mappable];
-            if(annotationView) [viewsAnnotationsToRemove addObject:annotationView];
+        
+        if([mappable conformsToProtocol:@protocol(FZMapable)]) {
+            if(![byId objectForKey:mappable._id] && ![currentlySelected._id isEqualToString:mappable._id] ) {
+                [mappablesToRemove addObject:mappable];
+                UIView *annotationView = [self viewForAnnotation:mappable];
+                if(annotationView) [viewsAnnotationsToRemove addObject:annotationView];
+            }
         }
     }];
     
@@ -174,9 +177,10 @@
             userLocationView = [self viewForAnnotation:mappable];
             continue;
         }
-        NSParameterAssert(mappable._id);
-        
-        [visibleById setObject:mappable forKey:mappable._id];
+        else if([mappable conformsToProtocol:@protocol(FZMapable)]) {
+            NSParameterAssert(mappable._id);
+            [visibleById setObject:mappable forKey:mappable._id];
+        }
     }
     
     NSMutableSet *newAnnotations = [[NSMutableSet alloc] initWithCapacity:mappables.count];
