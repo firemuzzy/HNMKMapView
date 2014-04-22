@@ -23,7 +23,7 @@
 
 @property (atomic, strong) MKUserLocation *lastUserLocation;
 @property (nonatomic, strong) UITapGestureRecognizer *tapOnMapRecognizer;
-@property (nonatomic, strong) UITapGestureRecognizer *doubleTapOnMapRecognizer;
+//@property (nonatomic, strong) UITapGestureRecognizer *doubleTapOnMapRecognizer;
 @end
 
 @implementation FZMapView
@@ -32,7 +32,7 @@
     if(self = [super init]) {
         self.delegate = self;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
-        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
+//        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
     return self;
 }
@@ -41,7 +41,7 @@
     if(self = [super initWithFrame:frame mapID:mapID]) {
         self.delegate = self;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
-        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
+//        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
     return self;
 }
@@ -67,13 +67,13 @@
     return self;
 }
 
--(UITapGestureRecognizer *) doubleTapOnMapRecognizer {
-    if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
-    _doubleTapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapOnMapView:)];
-    _doubleTapOnMapRecognizer.numberOfTapsRequired = 2;
-    _doubleTapOnMapRecognizer.delegate = self;
-    return _doubleTapOnMapRecognizer;
-}
+//-(UITapGestureRecognizer *) doubleTapOnMapRecognizer {
+//    if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
+//    _doubleTapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapOnMapView:)];
+//    _doubleTapOnMapRecognizer.numberOfTapsRequired = 2;
+//    _doubleTapOnMapRecognizer.delegate = self;
+//    return _doubleTapOnMapRecognizer;
+//}
 
 -(void) doubleTapOnMapView: (UITapGestureRecognizer *) doubleTapOnMapRecognizer {
     CGPoint p = [doubleTapOnMapRecognizer locationInView:self];
@@ -90,7 +90,7 @@
 -(UITapGestureRecognizer *) tapOnMapRecognizer {
     if(_tapOnMapRecognizer) return _tapOnMapRecognizer;
     _tapOnMapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnMapView:)];
-    [_tapOnMapRecognizer requireGestureRecognizerToFail:self.doubleTapOnMapRecognizer];
+//    [_tapOnMapRecognizer requireGestureRecognizerToFail:self.doubleTapOnMapRecognizer];
     _tapOnMapRecognizer.delegate = self;
     return _tapOnMapRecognizer;
 }
