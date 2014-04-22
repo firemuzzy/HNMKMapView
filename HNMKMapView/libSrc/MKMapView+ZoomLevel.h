@@ -40,6 +40,8 @@
  */
 - (double)zoomLevel;
 
+- (double)rotaionInsensitiveMapWidth;
+
 - (NSNumber *)zoomLevelForFetch;
 
 // Helper

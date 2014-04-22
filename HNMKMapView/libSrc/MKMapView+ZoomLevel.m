@@ -202,6 +202,36 @@
     return zoomLevel;
 }
 
+- (double)rotaionInsensitiveMapWidth {
+    CGPoint centerPt = CGPointMake(self.bounds.origin.x + self.bounds.size.width/2, self.bounds.origin.y + self.bounds.size.height/2);
+    CGPoint centerLeftPt = CGPointMake(self.bounds.origin.x, self.bounds.origin.y + self.bounds.size.height/2);
+    
+    CGPoint rotatedCenterLeftPt;
+    
+    CLLocationDirection cameraHeading = self.camera.heading;
+    if(cameraHeading > 0) {
+        // roate the center left to counteract the turn of the map
+        double radianAngle = (-self.camera.heading) * M_PI / 180.0;
+        CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(centerPt.x, centerPt.y);
+        CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(radianAngle);
+        CGAffineTransform customRotation = CGAffineTransformConcat(CGAffineTransformConcat( CGAffineTransformInvert(translateTransform), rotationTransform), translateTransform);
+        rotatedCenterLeftPt = CGPointApplyAffineTransform(centerLeftPt, customRotation);
+    } else {
+        rotatedCenterLeftPt = centerLeftPt;
+    }
+    
+    CLLocationCoordinate2D center = [self convertPoint:centerPt toCoordinateFromView:self];
+    CLLocationCoordinate2D centerLeft = [self convertPoint:rotatedCenterLeftPt toCoordinateFromView:self];
+    
+    MKMapPoint centerMapPt = MKMapPointForCoordinate(center);
+    MKMapPoint centerLeftMapPt = MKMapPointForCoordinate(centerLeft);
+    
+    double xSquared = pow((centerMapPt.x - centerLeftMapPt.x), 2);
+    double ySquared = pow((centerMapPt.y - centerLeftMapPt.y), 2);
+    
+    return sqrt(xSquared + ySquared) * 2;
+}
+
 - (NSNumber *)zoomLevelForFetch {
     NSUInteger v = MAX(2, (NSUInteger)(self.zoomLevel + 1.5));
     if(v >= 18) {
