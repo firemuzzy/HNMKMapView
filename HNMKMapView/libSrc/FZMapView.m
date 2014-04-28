@@ -30,7 +30,8 @@
 
 - (instancetype) init {
     if(self = [super init]) {
-        self.delegate = self;
+        __typeof__(self) __weak weakSelf = self;
+        self.delegate = weakSelf;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
 //        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
@@ -39,7 +40,8 @@
 
 -(instancetype) initWithFrame:(CGRect)frame mapID:(NSString *)mapID {
     if(self = [super initWithFrame:frame mapID:mapID]) {
-        self.delegate = self;
+        __typeof__(self) __weak weakSelf = self;
+        self.delegate = weakSelf;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
 //        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
@@ -151,16 +153,23 @@
 -(void)addMappables:(NSArray *)mappables withCurrentlySelected:(id<FZMapable>)currentlySelected {
     MKAnnotationView *userLocationView;
     
+    __block NSArray *annotations;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        annotations = self.annotations;
+    });
+    NSUInteger annotationsCount = annotations.count;
+    
     NSMutableDictionary *byId = [[NSMutableDictionary alloc] initWithCapacity:mappables.count];
     for(id<FZMapable> mappable in mappables) {
+        NSParameterAssert(mappable);
         NSParameterAssert(mappable._id);
-        
         [byId setObject:mappable forKey:mappable._id];
     }
     
-    NSMutableArray *mappablesToRemove = [[NSMutableArray alloc] initWithCapacity:self.annotations.count];
-    NSMutableArray *viewsAnnotationsToRemove = [[NSMutableArray alloc] initWithCapacity:self.annotations.count];
-    [self.annotations enumerateObjectsUsingBlock:^(id<FZMapable> mappable, NSUInteger idx, BOOL *stop) {
+    NSMutableArray *mappablesToRemove = [[NSMutableArray alloc] initWithCapacity:annotationsCount];
+    NSMutableArray *viewsAnnotationsToRemove = [[NSMutableArray alloc] initWithCapacity:annotationsCount];
+    [annotations enumerateObjectsUsingBlock:^(id<FZMapable> mappable, NSUInteger idx, BOOL *stop) {
+        NSParameterAssert(mappable);
         if([mappable isKindOfClass:[MKUserLocation class]]) return;
         
         if([mappable conformsToProtocol:@protocol(FZMapable)]) {
@@ -172,27 +181,31 @@
         }
     }];
     
-    NSMutableDictionary *visibleById = [[NSMutableDictionary alloc] initWithCapacity:self.annotations.count];
-    for(id<FZMapable> mappable in self.annotations) {
+    NSMutableDictionary *visibleById = [[NSMutableDictionary alloc] initWithCapacity:annotationsCount];
+    for(id<FZMapable> mappable in annotations) {
         if([mappable isKindOfClass:[MKUserLocation class]]) {
             userLocationView = [self viewForAnnotation:mappable];
             continue;
         }
         else if([mappable conformsToProtocol:@protocol(FZMapable)]) {
+            NSParameterAssert(mappable);
             NSParameterAssert(mappable._id);
             [visibleById setObject:mappable forKey:mappable._id];
         }
     }
     
     NSMutableSet *newAnnotations = [[NSMutableSet alloc] initWithCapacity:mappables.count];
-    for(id<FZMapable>newMappable in mappables) {
-        id<FZMapable>visibleMappable = [visibleById objectForKey:newMappable._id];
-        if(!visibleMappable) {
-            [newAnnotations addObject:newMappable];
+    if(mappables) {
+        for(id<FZMapable>newMappable in mappables) {
+            id<FZMapable>visibleMappable = [visibleById objectForKey:newMappable._id];
+            if(!visibleMappable) {
+                [newAnnotations addObject:newMappable];
+            }
         }
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSParameterAssert(newAnnotations);
         [self addAnnotations:[newAnnotations allObjects]];
         [UIView animateWithDuration:.5f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             for(UIView *view in viewsAnnotationsToRemove) {
