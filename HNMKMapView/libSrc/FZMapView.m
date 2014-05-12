@@ -153,11 +153,14 @@
 -(void)addMappables:(NSArray *)mappables withCurrentlySelected:(id<FZMapable>)currentlySelected {
     MKAnnotationView *userLocationView;
     
-    __block NSArray *annotations;
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        annotations = self.annotations;
-    });
+    //    __block NSArray *annotations;
+    //    dispatch_sync(dispatch_get_main_queue(), ^{
+    //        annotations = self.annotations;
+    //    });
+    NSArray *annotations = self.annotations;
     NSUInteger annotationsCount = annotations.count;
+    
+    
     
     NSMutableDictionary *byId = [[NSMutableDictionary alloc] initWithCapacity:mappables.count];
     for(id<FZMapable> mappable in mappables) {
