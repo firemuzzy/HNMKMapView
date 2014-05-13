@@ -102,8 +102,8 @@
     UIView *v = [self hitTest:p withEvent:nil];
     
     if(![v isKindOfClass:[MKAnnotationView class]]) {
-        if([self.fzDelegate respondsToSelector:@selector(tapOnMapView:) ]) {
-            [self.fzDelegate tapOnMapView:self];
+        if([self.fzDelegate respondsToSelector:@selector(tapOnMapView:atPoint:) ]) {
+            [self.fzDelegate tapOnMapView:self atPoint:p];
         }
     }
 }

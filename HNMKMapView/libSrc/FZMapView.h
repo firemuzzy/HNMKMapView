@@ -24,7 +24,7 @@
 
 @optional
 - (void)mapView:(MKMapView *)mapView didOpenToInitialCamera:(MKMapCamera *)camera;
-- (void)tapOnMapView:(MKMapView *)mapView;
+- (void)tapOnMapView:(MKMapView *)mapView atPoint:(CGPoint)point;
 - (void)doubleTapOnMapView:(MKMapView *)mapView;
 - (void)mapView:(MKMapView *)mapView didDeselectAfterTimerAnnotationView:(MKAnnotationView *)view;
 @end
