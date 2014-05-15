@@ -9,12 +9,9 @@
 #import "FZMapView.h"
 #import "MKMapView+HearNearMap.h"
 
-#import <MBXMapKit.h>
-
 @interface FZMapView ()<MKMapViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSTimer *deselectTimer;
-@property (nonatomic, strong) MKMapCamera *initialCamera;
 
 //@property (atomic, assign) BOOL didPreformFirstRender;
 //@property (atomic, assign) BOOL initiatedFirstCameraSet;
@@ -35,41 +32,19 @@
         __typeof__(self) __weak weakSelf = self;
         self.delegate = weakSelf;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
-//        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
     return self;
 }
 
--(instancetype) initWithFrame:(CGRect)frame mapID:(NSString *)mapID {
-    if(self = [super initWithFrame:frame mapID:mapID]) {
+- (instancetype) initWithFrame:(CGRect)frame {
+    if(self = [super initWithFrame:frame]) {
         __typeof__(self) __weak weakSelf = self;
         self.delegate = weakSelf;
         [self addGestureRecognizer:self.tapOnMapRecognizer];
-//        [self addGestureRecognizer:self.doubleTapOnMapRecognizer];
     }
     return self;
 }
 
-
--(instancetype)initWithInitialCamera:(MKMapCamera *)camera {
-    self = [self init];
-    if (self) {
-        _initialCamera = camera;
-        HNMapLog(@"Set initial camera variable to %@", camera);
-        // Initialization code
-    }
-    return self;
-}
-
--(instancetype)initWithFrame:(CGRect)frame mapID:(NSString *)mapID initialCamera:(MKMapCamera *)camera {
-    self = [self initWithFrame:frame mapID:mapID];
-    if (self) {
-        _initialCamera = camera;
-        HNMapLog(@"Set initial camera variable to %@", camera);
-        // Initialization code
-    }
-    return self;
-}
 
 //-(UITapGestureRecognizer *) doubleTapOnMapRecognizer {
 //    if(_doubleTapOnMapRecognizer) return _doubleTapOnMapRecognizer;
@@ -108,16 +83,6 @@
             [self.fzDelegate tapOnMapView:self atPoint:p];
         }
     }
-}
-
-- (void)_openedToInitialcamera {
-    if([self.fzDelegate respondsToSelector:@selector(mapView:didOpenToInitialCamera:) ]) {
-        HNMapLog(@"Opened to initial camera %@", self.initialCamera);
-//        self.didPreformOnFirstOpen = YES;
-        [self.fzDelegate mapView:self didOpenToInitialCamera:self.initialCamera];
-    }
-    
-    self.initialCamera = nil;
 }
 
 -(CLLocationCoordinate2D) northEast {
@@ -270,21 +235,6 @@
 }
 
 - (void)mapViewWillStartRenderingMap:(MKMapView *)mapView {
-//    if(!self.didPreformFirstRender) {
-//        HNMapLog(@"Preformed fierst render");
-//        self.didPreformFirstRender = YES;
-//    }
-    
-//    if(!self.initiatedFirstCameraSet) {
-//        self.initiatedFirstCameraSet = YES;
-//
-//        if(self.initialCamera) {
-//            [self setCamera:self.initialCamera animated:NO];
-//        } else {
-//            [self _openedToInitialcamera];
-//        }
-//    }
-    
     HNMapLog(@"mapViewWillStartRenderingMap %@", MKStringFromCoordinateRegion(mapView.region));
     if([self.fzDelegate respondsToSelector:@selector(mapViewWillStartRenderingMap:)]) {
         [self.fzDelegate mapViewWillStartRenderingMap:mapView];

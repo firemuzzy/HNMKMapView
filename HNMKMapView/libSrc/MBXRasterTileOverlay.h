@@ -40,7 +40,6 @@ extern NSInteger const MBXMapKitErrorCodeDictionaryMissingKeys;
 - (id)initWithMapID:(NSString *)mapID;
 - (id)initWithMapID:(NSString *)mapID includeMetadata:(BOOL)includeMetadata includeMarkers:(BOOL)includeMarkers;
 - (id)initWithMapID:(NSString *)mapID includeMetadata:(BOOL)includeMetadata includeMarkers:(BOOL)includeMarkers imageQuality:(MBXRasterImageQuality)imageQuality;
-- (id)initWithOfflineMapDatabase:(MBXOfflineMapDatabase *)offlineMapDatabase;
 
 @property (weak,nonatomic) id<MBXRasterTileOverlayDelegate> delegate;
 

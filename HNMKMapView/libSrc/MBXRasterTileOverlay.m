@@ -20,16 +20,6 @@
 
 @end
 
-
-#pragma mark - Private API for cooperating with MBXOfflineMapDatabase
-
-@interface MBXOfflineMapDatabase ()
-
-- (NSData *)dataForURL:(NSURL *)url withError:(NSError **)error;
-
-@end
-
-
 #pragma mark -
 
 @interface MBXRasterTileOverlay ()
@@ -58,8 +48,6 @@
 @property (nonatomic) BOOL markerIconLoaderMayInitiateDelegateCallback;
 @property (nonatomic) BOOL didFinishLoadingMetadata;
 @property (nonatomic) BOOL didFinishLoadingMarkers;
-
-@property (strong, nonatomic) MBXOfflineMapDatabase *offlineMapDatabase;
 
 @property (nonatomic) NSDictionary *metadataForPendingNotification;
 @property (nonatomic) NSError *metadataErrorForPendingNotification;
@@ -179,17 +167,6 @@
     if (self)
     {
         [self setupMapID:mapID includeMetadata:includeMetadata includeMarkers:includeMarkers imageQuality:imageQuality];
-    }
-    return self;
-}
-
-- (id)initWithOfflineMapDatabase:(MBXOfflineMapDatabase *)offlineMapDatabase
-{
-    self = [super init];
-    if (self)
-    {
-        _offlineMapDatabase = offlineMapDatabase;
-        [self setupMapID:offlineMapDatabase.mapID includeMetadata:offlineMapDatabase.includesMetadata includeMarkers:offlineMapDatabase.includesMarkers imageQuality:offlineMapDatabase.imageQuality];
     }
     return self;
 }
@@ -575,58 +552,29 @@
 
 - (void)asyncLoadURL:(NSURL *)url workerBlock:(void(^)(NSData *,NSError **))workerBlock completionHandler:(void (^)(NSData *, NSError *))completionHandler
 {
-    // This method exists to:
-    // 1. Encapsulte the boilderplate network code for checking HTTP status which is needed for every data session task
-    // 2. Provide a single configuration point where it is possible to set breakpoints and adjust the caching policy for all HTTP requests
-    // 3. Provide a hook point for implementing alternate methods (i.e. offline map database) of fetching data for a URL
+    // In the normal case, use HTTP network requests to fetch data for URLs
     //
-
-    if (_offlineMapDatabase)
+    NSURLSessionDataTask *task;
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
+    task = [_dataSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        // If this assert fails, it's probably because MBXOfflineMapDownloader's removeOfflineMapDatabase: method has been invoked
-        // for this offline map database object while the database is still associated with a map overlay. That's a serious logic
-        // error which should be checked for and avoided.
-        //
-        assert(_offlineMapDatabase.isInvalid == NO);
-
-        // If an offline map database is configured for this overlay, use the database to fetch data for URLs
-        //
-        NSError *error;
-        NSData *data = [_offlineMapDatabase dataForURL:url withError:&error];
-        if(!error)
+        if (!error)
         {
-            // Since the URL was successfully retrieved, invoke the block to process its data
-            //
-            if (workerBlock) workerBlock(data, &error);
-        }
-        completionHandler(data,error);
-    }
-    else
-    {
-        // In the normal case, use HTTP network requests to fetch data for URLs
-        //
-        NSURLSessionDataTask *task;
-        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
-        task = [_dataSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-        {
-            if (!error)
+            if ([response isKindOfClass:[NSHTTPURLResponse class]] && ((NSHTTPURLResponse *)response).statusCode != 200)
             {
-                if ([response isKindOfClass:[NSHTTPURLResponse class]] && ((NSHTTPURLResponse *)response).statusCode != 200)
-                {
-                    error = [self statusErrorFromHTTPResponse:response];
-                }
-                else
-                {
-                    // Since the URL was successfully retrieved, invoke the block to process its data
-                    //
-                    if (workerBlock) workerBlock(data, &error);
-                }
+                error = [self statusErrorFromHTTPResponse:response];
             }
+            else
+            {
+                // Since the URL was successfully retrieved, invoke the block to process its data
+                //
+                if (workerBlock) workerBlock(data, &error);
+            }
+        }
 
-            completionHandler(data,error);
-        }];
-        [task resume];
-    }
+        completionHandler(data,error);
+    }];
+    [task resume];
 }
 
 

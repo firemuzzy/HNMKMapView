@@ -31,9 +31,6 @@
 
 @property (nonatomic, strong) id<FZMapViewDelegate> fzDelegate;
 
--(instancetype)initWithInitialCamera:(MKMapCamera *)camera;
--(instancetype)initWithFrame:(CGRect)frame mapID:(NSString *)mapID initialCamera:(MKMapCamera *)camera;
-
 -(CLLocationCoordinate2D) northEast;
 -(CLLocationCoordinate2D) southWest;
 -(FZSphericalTrapezium) latitudeLongitudeBoundingBox;
