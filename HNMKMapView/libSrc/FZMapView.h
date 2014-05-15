@@ -7,10 +7,8 @@
 //
 
 #import <MapKit/MapKit.h>
-#import <MBXMapKit.h>
 #import "FZMapFoundation.h"
-#import <MBXMapKit.h>
-#import <FZMapable.h>
+#import "FZMapable.h"
 
 #ifndef HNMapLog
     #if LOG_HN_MAP
@@ -29,7 +27,7 @@
 - (void)mapView:(MKMapView *)mapView didDeselectAfterTimerAnnotationView:(MKAnnotationView *)view;
 @end
 
-@interface FZMapView : MBXMapView
+@interface FZMapView : MKMapView
 
 @property (nonatomic, strong) id<FZMapViewDelegate> fzDelegate;
 

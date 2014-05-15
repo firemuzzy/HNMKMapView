@@ -9,6 +9,8 @@
 #import "FZMapView.h"
 #import "MKMapView+HearNearMap.h"
 
+#import <MBXMapKit.h>
+
 @interface FZMapView ()<MKMapViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSTimer *deselectTimer;
